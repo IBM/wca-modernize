@@ -1,0 +1,1213 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM watsonx Code Assistant - Modernize Applications">
+      
+      
+        <meta name="author" content="Christopher Bienko (cdbienko@us.ibm.com)">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>3. Configuration management - IBM watsonx Code Assistant - Modernize Applications</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../styles/override-print.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuration-and-dependency-managementapplication-modernization-websphere-to-liberty" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="IBM watsonx Code Assistant - Modernize Applications" class="md-header__button md-logo" aria-label="IBM watsonx Code Assistant - Modernize Applications" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM watsonx Code Assistant - Modernize Applications
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. Configuration management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IBM watsonx Code Assistant - Modernize Applications" class="md-nav__button md-logo" aria-label="IBM watsonx Code Assistant - Modernize Applications" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IBM watsonx Code Assistant - Modernize Applications
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          On-Premises Installation and Deployment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="On-Premises Installation and Deployment" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          On-Premises Installation and Deployment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../on-premises/1/" class="md-nav__link">
+        1. Objectives and requirements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../on-premises/2/" class="md-nav__link">
+        2. Reserve an environment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../on-premises/3/" class="md-nav__link">
+        3. Bastion host setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../on-premises/4/" class="md-nav__link">
+        4. Cluster preparation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../on-premises/5/" class="md-nav__link">
+        5. Install prerequisite software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../on-premises/6/" class="md-nav__link">
+        6. Install IBM Software Hub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../on-premises/7/" class="md-nav__link">
+        7. Install watsonx Code Assistant
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          IBM Cloud (SaaS) Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="IBM Cloud (SaaS) Configuration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          IBM Cloud (SaaS) Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saas/1/" class="md-nav__link">
+        1. Objectives and requirements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saas/2/" class="md-nav__link">
+        2. Reserve an environment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saas/3/" class="md-nav__link">
+        3. Configure for enterprise Java
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saas/4/" class="md-nav__link">
+        4. Install WCA extension for Visual Studio Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saas/5/" class="md-nav__link">
+        5. Install WCA plug-in for Eclipse IDE
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Application Modernization - WebSphere to Liberty
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Application Modernization - WebSphere to Liberty" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Application Modernization - WebSphere to Liberty
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1/" class="md-nav__link">
+        1. Objectives and requirements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2/" class="md-nav__link">
+        2. Basic migration capabilities
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3. Configuration management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        3. Configuration management
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-incentives-to-modernize" class="md-nav__link">
+    i. Incentives to modernize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-websphere-legacy-code" class="md-nav__link">
+    ii. WebSphere legacy code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-liberty-modernized-code" class="md-nav__link">
+    iii. Liberty modernized code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-hands-on-with-wca" class="md-nav__link">
+    iv. Hands-on with WCA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-next-steps" class="md-nav__link">
+    v. Next steps
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4/" class="md-nav__link">
+        4. APIs and libraries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5/" class="md-nav__link">
+        5. EJB modernization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6/" class="md-nav__link">
+        6. JMS integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7/" class="md-nav__link">
+        7. Security modernization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8/" class="md-nav__link">
+        8. Full stack modernization
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-incentives-to-modernize" class="md-nav__link">
+    i. Incentives to modernize
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-websphere-legacy-code" class="md-nav__link">
+    ii. WebSphere legacy code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-liberty-modernized-code" class="md-nav__link">
+    iii. Liberty modernized code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-hands-on-with-wca" class="md-nav__link">
+    iv. Hands-on with WCA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-next-steps" class="md-nav__link">
+    v. Next steps
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="configuration-and-dependency-managementapplication-modernization-websphere-to-liberty"><strong>Configuration and dependency management</strong></br><em>Application Modernization - WebSphere to Liberty</em></h1>
+<h2 id="i-incentives-to-modernize"><strong>i. Incentives to modernize</strong></h2>
+<div class="admonition quote">
+<p class="admonition-title">SECTION I. TERMINOLOGY</p>
+<p>For readability, <a href="https://www.ibm.com/products/websphere-application-server" target="_blank"><strong>IBM WebSphere Application Server</strong></a> (WAS) in this chapter is referred to in shorthand as "WebSphere", unless noted otherwise. Similarly, <a href="https://www.ibm.com/products/cloud-pak-for-applications/liberty" target="_blank"><strong>IBM WebSphere Liberty</strong></a> is referenced in shorthand as simply "Liberty".</p>
+</div>
+<p>In order to perform configuration and dependency management, Lariat Corporation employs various WebSphere <strong>class loader configurations</strong> to exert control over how Java classes and libraries are accessed by applications. In essence, these class loaders help define the scope and visibility of Java classes, resources, and libraries that are available for use by those applications.</p>
+<p>Legacy applications built for WAS can use class loader configurations in a variety of ways, including:</p>
+<ul>
+<li><strong>Isolation of application dependencies:</strong> provide assurances that applications avoid conflicts or unintended interactions that might arise from using shared libraries</li>
+<li><strong>Application module management:</strong> for WebSphere Enterprise Archive (EAR) applications, like those covered in the previous section, class loader configurations can manage the visibility of classes across different modules of the same EAR file</li>
+</ul>
+<p>In addition, the ability to selectively control class loading can reduce the overall memory footprint and resource overhead of an application. The result is that class loader configurations play an important part for managing dependency conflicts and application stability across Lariat's WAS services and environments.</p>
+<p></br></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>WebSphere class loader configuration</th>
+<th>Liberty server configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Configuration Complexity</strong></td>
+<td>High: hierarchical and administration-intensive.</td>
+<td>Low: concise and self-contained.</td>
+</tr>
+<tr>
+<td><strong>Maintainability</strong></td>
+<td>Configuration tends to be dispersed, raising difficulties with maintenance.</td>
+<td>Clear and concise, only need to maintain a single configuration file.</td>
+</tr>
+<tr>
+<td><strong>Developer Productivity</strong></td>
+<td>Lowered due to administrative overhead, high probability of class-loading conflicts.</td>
+<td>Raised due to minimal overhead and reduced likelihood of human-introduced errors from single source of truth.</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Difficult to scale due to potential for complex sets of dependencies.</td>
+<td>Rapidly scaled due to cloud-native design.</td>
+</tr>
+</tbody>
+</table>
+<p>Lariat's legacy <strong>WebSphere class loader configuration</strong> implementation suffers from significant (and unnecessary) complexity owing to bloated class-loader configurations. Multiple shared libraries need to be configured and adjusted via an admin console, resulting in redundant use of dependencies and libraries that could otherwise be shared with better design.</p>
+<p>Through modernization of the code to <strong>Liberty server configuration</strong>, the expectation is that the process of managing dependencies and application configuration can be simplified and more easily maintained.</p>
+<hr />
+<h2 id="ii-websphere-legacy-code"><strong>ii. WebSphere legacy code</strong></h2>
+<p>First, examine the legacy code (below), which as mentioned previously is a snapshot of a larger application using <strong>WebSphere class loader configuration</strong>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">WEBSPHERE APPLICATION SERVER</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cm">&lt;!-- deployment.xml --&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">&lt;deployment&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="nt">&lt;classloader</span> <span class="na">mode=</span><span class="s">&quot;PARENT_LAST&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>        <span class="nt">&lt;library&gt;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>            <span class="nt">&lt;file</span> <span class="na">path=</span><span class="s">&quot;/shared/libs/customlib.jar&quot;</span> <span class="nt">/&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="nt">&lt;/library&gt;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>        <span class="nt">&lt;shared-library</span> <span class="na">name=</span><span class="s">&quot;LegacySharedLib&quot;</span> <span class="nt">/&gt;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="nt">&lt;/classloader&gt;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="nt">&lt;/deployment&gt;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="cm">&lt;!-- shared-libraries.xml --&gt;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="nt">&lt;shared-libraries&gt;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>    <span class="nt">&lt;library</span> <span class="na">name=</span><span class="s">&quot;LegacySharedLib&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>        <span class="nt">&lt;files&gt;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>            <span class="nt">&lt;file&gt;</span>/opt/was/shared/lib/shared-legacy.jar<span class="nt">&lt;/file&gt;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>        <span class="nt">&lt;/files&gt;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="nt">&lt;/library&gt;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="nt">&lt;/shared-libraries&gt;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p></br>
+The legacy implementation utilizes separate, detailed descriptor files like <code>deployment.xml</code> (<strong>lines 1-9</strong>) and <code>shared-libraries.xml</code> (<strong>lines 11-18</strong>) to handle complex dependency and class-loading configurations. Lariat administrators who manage this code base must explicitly set class loader modes to control resource loading order — an inefficient, manual process achieved using the <code>PARENT_LAST</code> option.</p>
+<p>As a consequence, libraries that should ideally be shared by multiple applications instead need to be managed separately by each application in turn. This is terribly inefficient and produces needlessly complex classloader configurations. For Lariat's administrators, this approach to configuration and dependency management has frequently resulted in version conflicts for applications and complex debugging work for developers.</p>
+<hr />
+<h2 id="iii-liberty-modernized-code"><strong>iii. Liberty modernized code</strong></h2>
+<p>Consider below the modernized (but functionally equivalent) application code using <strong>Liberty server configuration</strong>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">WEBSPHERE LIBERTY</label><label for="__tabbed_2_2">WEBSPHERE APPLICATION SERVER</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="hll"><span class="cm">&lt;!-- server.xml --&gt;</span>
+</span><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">&lt;server&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>    <span class="nt">&lt;featureManager&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>        <span class="nt">&lt;feature&gt;</span>webProfile-8.0<span class="nt">&lt;/feature&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>    <span class="nt">&lt;/featureManager&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>    <span class="nt">&lt;library</span> <span class="na">id=</span><span class="s">&quot;customLib&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>        <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">&quot;${server.config.dir}/shared/libs&quot;</span> <span class="na">includes=</span><span class="s">&quot;*.jar&quot;</span> <span class="nt">/&gt;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>    <span class="nt">&lt;/library&gt;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>    <span class="nt">&lt;application</span> <span class="na">location=</span><span class="s">&quot;modernized.war&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>        <span class="nt">&lt;classloader</span> <span class="na">delegation=</span><span class="s">&quot;parentLast&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>            <span class="nt">&lt;commonLibrary&gt;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>                <span class="nt">&lt;library</span> <span class="na">ref=</span><span class="s">&quot;customLib&quot;</span> <span class="nt">/&gt;</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>            <span class="nt">&lt;/commonLibrary&gt;</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>        <span class="nt">&lt;/classloader&gt;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a>    <span class="nt">&lt;/application&gt;</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="nt">&lt;/server&gt;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="hll"><span class="cm">&lt;!-- deployment.xml --&gt;</span>
+</span><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nt">&lt;deployment&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    <span class="nt">&lt;classloader</span> <span class="na">mode=</span><span class="s">&quot;PARENT_LAST&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>        <span class="nt">&lt;library&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>            <span class="nt">&lt;file</span> <span class="na">path=</span><span class="s">&quot;/shared/libs/customlib.jar&quot;</span> <span class="nt">/&gt;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>        <span class="nt">&lt;/library&gt;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>        <span class="nt">&lt;shared-library</span> <span class="na">name=</span><span class="s">&quot;LegacySharedLib&quot;</span> <span class="nt">/&gt;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>    <span class="nt">&lt;/classloader&gt;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="nt">&lt;/deployment&gt;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="hll"><span class="cm">&lt;!-- shared-libraries.xml --&gt;</span>
+</span><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="nt">&lt;shared-libraries&gt;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>    <span class="nt">&lt;library</span> <span class="na">name=</span><span class="s">&quot;LegacySharedLib&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>        <span class="nt">&lt;files&gt;</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>            <span class="nt">&lt;file&gt;</span>/opt/was/shared/lib/shared-legacy.jar<span class="nt">&lt;/file&gt;</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>        <span class="nt">&lt;/files&gt;</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>    <span class="nt">&lt;/library&gt;</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="nt">&lt;/shared-libraries&gt;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p></br>
+The modernized Liberty code implementation simplifies the management of dependencies by removing the discrete (separate) descriptors like <code>deployment.xml</code> and <code>shared-libraries.xml</code> from the WAS implementation. Instead, configuration and dependency management has been consolidated into a single <code>server.xml</code> descriptor, which more clearly defines the permitted libraries and their associated paths.</p>
+<p>Other benefits from the modernization work also include:</p>
+<ul>
+<li>
+<p>Class loading policies (such as 'parentLast' on <strong>line 12</strong>) are now explicitly stated, helping to simplify the process of resource management for developers drawing from these resources.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;classloader</span> <span class="na">delegation=</span><span class="s">&quot;parentLast&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="nt">&lt;commonLibrary&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="nt">&lt;library</span> <span class="na">ref=</span><span class="s">&quot;customLib&quot;</span> <span class="nt">/&gt;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="nt">&lt;/commonLibrary&gt;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">&lt;/classloader&gt;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Dependencies are now directly tied and associated to applications, creating relationships between the two that are more transparent and easier to maintain.</p>
+</li>
+</ul>
+<p>Ultimately, the modernization process into Liberty has resulted in configuration and dependency management that reduces dependency conflicts, simplifies resource management, and improves the overall clarity and maintainability of these assets going forward.</p>
+<hr />
+<h2 id="iv-hands-on-with-wca"><strong>iv. Hands-on with WCA</strong></h2>
+<div class="admonition quote">
+<p class="admonition-title">SECTION IV. TERMINOLOGY</p>
+<p>For the purposes of comparison and brevity, the WCA-generated Liberty code will be referred to simply as "<strong>WCA</strong>" and Lariat Corporation's best-practice modernized code will be referred to as "<strong>Lariat</strong>".</p>
+</div>
+<p>In the following section, participants will have the opportunity to experiment with the <strong>watsonx Code Assistant</strong> (<strong>WCA</strong>) service set up in the <a href="https://ibm.github.io/wca-l4/saas/1/" target="_blank"><strong>IBM Cloud (SaaS) Configuration module</strong></a>.</p>
+<ul>
+<li>Using the <strong>Chat</strong> feature, which can be accessed via the WCA extension for Visual Studio Code (VS Code), you will first ask WCA convert the original <em>WebSphere Application Service (WCA)</em> code into a modernized equivalent for <em>WebSphere Liberty</em>.</li>
+<li>The lab guide documentation will then walk you through an analysis of the WCA-generated Liberty code and compare that to the best-practice Liberty code discussed previously in <strong>iii. Liberty modernized code</strong>.</li>
+<li>After comparing the two approaches to Liberty modernization, you will have the opportunity to continue tinkering with the WCA Chat service. Experimentation is encouraged. Try influencing WCA's generative AI recommendations by making further prompts or inquiries into the code responses it generates.</li>
+<li>When satisfied, you may proceed onwards to the next module.</li>
+</ul>
+<hr />
+<ol>
+<li><strong>Log in</strong> to the <a href="https://ibm.github.io/wca-l4/saas/3/#iii-install-the-extension" target="_blank"><strong>WCA extension with VS Code</strong></a>. Once authenticated, proceed to Step 2.</li>
+</ol>
+<hr />
+<ol start="2">
+<li>
+<p>From the left taskbar, ensure that <strong>watsonx Code Assistant</strong><sup>[A]</sup> extension is selected.</p>
+<p>Within the <strong>Chat Session</strong> window, <strong>click</strong> on the <code>Enter / for commands</code> prompt<sup>[B]</sup> as shown.</p>
+<p></br>
+<a class="glightbox" href="../_attachments/appmod-2.2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/appmod-2.2.png" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="3">
+<li>
+<p>Prime the service to be ready to intake legacy WAS code and modernize that into Liberty code. As a suggestion, <strong>copy</strong> the following prompt, <strong>paste</strong> it into the chat window, and hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute the modernization request:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>I need to modernize code written for WebSphere Application Server into WebSphere Liberty. Can you help?
+</code></pre></div>
+<div class="admonition warning">
+<p><strong>TIP:</strong> You can increase the width of the Chat Session window by clicking and dragging the right-side of the window frame and pulling it towards the right of the screen.</p>
+</div>
+</li>
+</ol>
+<hr />
+<ol start="4">
+<li>
+<p>Now that WCA is primed to receive WAS code, <strong>copy and paste</strong> the following code block into the <strong>Chat Session</strong>, then <span class="keys"><kbd class="key-enter">Enter</kbd></span> to execute.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">WEBSPHERE APPLICATION SERVER</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cm">&lt;!-- deployment.xml --&gt;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nt">&lt;deployment&gt;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>    <span class="nt">&lt;classloader</span> <span class="na">mode=</span><span class="s">&quot;PARENT_LAST&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>        <span class="nt">&lt;library&gt;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>            <span class="nt">&lt;file</span> <span class="na">path=</span><span class="s">&quot;/shared/libs/customlib.jar&quot;</span> <span class="nt">/&gt;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>        <span class="nt">&lt;/library&gt;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>        <span class="nt">&lt;shared-library</span> <span class="na">name=</span><span class="s">&quot;LegacySharedLib&quot;</span> <span class="nt">/&gt;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>    <span class="nt">&lt;/classloader&gt;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="nt">&lt;/deployment&gt;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="cm">&lt;!-- shared-libraries.xml --&gt;</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="nt">&lt;shared-libraries&gt;</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>    <span class="nt">&lt;library</span> <span class="na">name=</span><span class="s">&quot;LegacySharedLib&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a>        <span class="nt">&lt;files&gt;</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a>            <span class="nt">&lt;file&gt;</span>/opt/was/shared/lib/shared-legacy.jar<span class="nt">&lt;/file&gt;</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>        <span class="nt">&lt;/files&gt;</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a>    <span class="nt">&lt;/library&gt;</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="nt">&lt;/shared-libraries&gt;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<hr />
+<ol start="5">
+<li>
+<p>After a few moments, WCA will return a combination of code blocks and explanations to the Chat session console. Cycle through the tab(s) below to examine the <strong>modernized, WCA-generated Liberty code</strong>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">WCA LIBERTY <code>server.xml</code></label><label for="__tabbed_4_2">WCA LIBERTY <code>shared-library.xml</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span>
+<span class="normal"><a href="#__codelineno-6-8">8</a></span>
+<span class="normal"><a href="#__codelineno-6-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">&lt;server</span> <span class="na">description=</span><span class="s">&quot;new server&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="nt">&lt;featureManager&gt;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>        <span class="nt">&lt;feature&gt;</span>jsp-2.3<span class="nt">&lt;/feature&gt;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>        <span class="nt">&lt;feature&gt;</span>servlet-3.1<span class="nt">&lt;/feature&gt;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>    <span class="nt">&lt;/featureManager&gt;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>    <span class="nt">&lt;httpEndpoint</span> <span class="na">id=</span><span class="s">&quot;defaultHttpEndpoint&quot;</span> <span class="na">host=</span><span class="s">&quot;*&quot;</span> <span class="na">httpPort=</span><span class="s">&quot;9080&quot;</span> <span class="na">httpsPort=</span><span class="s">&quot;9443&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>    <span class="nt">&lt;sharedLibrary</span> <span class="na">id=</span><span class="s">&quot;LegacySharedLib&quot;</span> <span class="na">location=</span><span class="s">&quot;path/to/shared-legacy.jar&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>    <span class="nt">&lt;classLoader</span> <span class="na">commonLibraryRef=</span><span class="s">&quot;LegacySharedLib&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="nt">&lt;/server&gt;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span>
+<span class="normal"><a href="#__codelineno-7-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nt">&lt;sharedLibraries&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>    <span class="nt">&lt;library</span> <span class="na">id=</span><span class="s">&quot;LegacySharedLib&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>        <span class="nt">&lt;files&gt;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>            <span class="nt">&lt;file&gt;</span>path/to/customlib.jar<span class="nt">&lt;/file&gt;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>        <span class="nt">&lt;/files&gt;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>    <span class="nt">&lt;/library&gt;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="nt">&lt;/sharedLibraries&gt;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<hr />
+<ol start="6">
+<li>At a glance, the newly-generated WCA code appears to be significantly more complex: splitting <strong>configuration organization</strong> across <code>server.xml</code> and <code>shared-library.xml</code>, rather than Lariat's consolidated <code>server.xml</code> approach. Not an encouraging start, but let's drill down into specific elements before making a final critique.</li>
+</ol>
+<hr />
+<ol start="7">
+<li>
+<p>In terms of <strong>encapsulation</strong> of necessary classes and libraries, Lariat's best-practices Liberty code outshines WCA's Liberty recommendations. Consider the following slice of Lariat's modernized code:</p>
+<p></br>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&lt;library</span> <span class="na">id=</span><span class="s">&quot;customLib&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="nt">&lt;fileset</span> <span class="na">dir=</span><span class="s">&quot;${server.config.dir}/shared/libs&quot;</span> <span class="na">includes=</span><span class="s">&quot;*.jar&quot;</span> <span class="nt">/&gt;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nt">&lt;/library&gt;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="hll"><span class="nt">&lt;classloader</span> <span class="na">delegation=</span><span class="s">&quot;parentLast&quot;</span><span class="nt">&gt;</span>
+</span><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="nt">&lt;commonLibrary&gt;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span class="nt">&lt;library</span> <span class="na">ref=</span><span class="s">&quot;customLib&quot;</span> <span class="nt">/&gt;</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="nt">&lt;/commonLibrary&gt;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nt">&lt;/classloader&gt;</span>
+</code></pre></div></p>
+<p></br>
+The code's <em>Classloader</em> has been limited in scope only to the deployed WAR: <code>parentLast</code> ensures that the application's classes override any shared ones, which is generally the "safer" approach to take for modernization of legacy applications. Contrast that to WCA's approach:</p>
+<p></br>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="hll"><span class="nt">&lt;sharedLibrary</span> <span class="na">id=</span><span class="s">&quot;LegacySharedLib&quot;</span> <span class="na">location=</span><span class="s">&quot;path/to/shared-legacy.jar&quot;</span><span class="nt">/&gt;</span>
+</span><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">&lt;classLoader</span> <span class="na">commonLibraryRef=</span><span class="s">&quot;LegacySharedLib&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>...
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nt">&lt;sharedLibraries&gt;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="hll">    <span class="nt">&lt;library</span> <span class="na">id=</span><span class="s">&quot;LegacySharedLib&quot;</span><span class="nt">&gt;</span>
+</span><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        <span class="nt">&lt;files&gt;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>            <span class="nt">&lt;file&gt;</span>path/to/customlib.jar<span class="nt">&lt;/file&gt;</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        <span class="nt">&lt;/files&gt;</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="nt">&lt;/library&gt;</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nt">&lt;/sharedLibraries&gt;</span>
+</code></pre></div></p>
+<p></br>
+WCA uses a <strong>global</strong> scoped <em>Classloader</em> which will impact all applications in the environment PATH. The implementation is also slightly confusing to look at and redundant in design — <code>LegacySharedLib</code> has been declared twice in the highlighted code.</p>
+</li>
+</ol>
+<hr />
+<ol start="8">
+<li>
+<p>Lastly, on the topic of <strong>application deployments</strong>, Lariat's code base has explicit WAR deployment instructions built into the <code>server.xml</code> configuration file:</p>
+<p></br>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">&lt;application</span> <span class="na">location=</span><span class="s">&quot;modernized.war&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="nt">&lt;classloader</span> <span class="na">delegation=</span><span class="s">&quot;parentLast&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>        <span class="nt">&lt;commonLibrary&gt;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>            <span class="nt">&lt;library</span> <span class="na">ref=</span><span class="s">&quot;customLib&quot;</span> <span class="nt">/&gt;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>        <span class="nt">&lt;/commonLibrary&gt;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="nt">&lt;/classloader&gt;</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nt">&lt;/application&gt;</span>
+</code></pre></div></p>
+<p></br></p>
+<p>Conversely, WCA's modernized Liberty code recommendations <em>do not include</em> a WAR deployment instruction set. This may be an artifact of the original WAS script (submitted in Step 4) that was only a snippet of the larger application — and therefore not indicative of a full-fledged, end to end application. As a result, WCA's recommendation does not include WAR deployment definitions which would be needed to actually load an application.</p>
+</li>
+</ol>
+<hr />
+<h2 id="v-next-steps"><strong>v. Next steps</strong></h2>
+<p>In the following module, participants will examine how to modernize legacy WebSphere Application Server APIs and libraries.</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. Basic migration capabilities" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              2. Basic migration capabilities
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../4/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. APIs and libraries" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              4. APIs and libraries
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 IBM
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.footer"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
