@@ -1,0 +1,101 @@
+# Project info
+site_name: IBM watsonx Code Assistant - Modernize Applications
+site_description: IBM watsonx Code Assistant - Modernize Applications
+site_author: Christopher Bienko (cdbienko@us.ibm.com)
+copyright: Copyright &copy; 2025 IBM
+
+# Repository
+repo_name: IBM/wca-l4
+#repo_url: https://github.com/IBM/wca-modernize
+#edit_uri: edit/master/docs
+docs_dir: docs
+
+nav:
+  - Introduction: 'index.md'
+  - On-Premises Installation and Deployment:
+    - 1. Objectives and requirements: 'on-premises/1.md'
+    - 2. Reserve an environment: 'on-premises/2.md'
+    - 3. Bastion host setup: 'on-premises/3.md'
+    - 4. Cluster preparation: 'on-premises/4.md'
+    - 5. Install prerequisite software: 'on-premises/5.md'
+    - 6. Install IBM Software Hub: 'on-premises/6.md'
+    - 7. Install watsonx Code Assistant: 'on-premises/7.md'
+  - IBM Cloud (SaaS) Configuration:
+    - 1. Objectives and requirements: 'saas/1.md'
+    - 2. Reserve an environment: 'saas/2.md'
+    - 3. Configure for enterprise Java: 'saas/3.md' 
+    - 4. Install WCA extension for Visual Studio Code: 'saas/4.md'
+    - 5. Install WCA plug-in for Eclipse IDE: 'saas/5.md'
+  - Application Modernization - WebSphere to Liberty:
+    - 1. Objectives and requirements: 'appmod/1.md'
+    - 2. Basic migration capabilities: 'appmod/2.md'
+    - 3. Configuration management: 'appmod/3.md'
+    - 4. APIs and libraries: 'appmod/4.md'
+    - 5. EJB modernization: 'appmod/5.md'
+    - 6. JMS integration: 'appmod/6.md'
+    - 7. Security modernization: 'appmod/7.md'
+    - 8. Full stack modernization: 'appmod/8.md'
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - navigation.footer
+  palette:
+      scheme: default
+
+plugins:
+  - mkdocs-video:
+      is_video: True
+      video_autoplay: False
+  - macros
+  - search
+  - glightbox
+  - print-site:
+      add_to_navigation: false
+      print_page_title: 'IBM watsonx Code Assistant Level 4 Lab Guide'
+      add_print_site_banner: false
+      # Table of contents
+      add_table_of_contents: false
+      toc_title: 'Table of Contents'
+      toc_depth: 6
+      # Content-related
+      add_full_urls: false
+      enumerate_headings: false
+      enumerate_figures: false
+      add_cover_page: true
+      cover_page_template: ""
+      path_to_pdf: ""
+      include_css: true
+      enabled: true
+
+markdown_extensions:
+  - markdown_fenced_code_tabs
+  - sane_lists
+  - pymdownx.details
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.keys
+  - attr_list
+  - md_in_html
+  - def_list
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - tables
+
+extra_css:
+  - styles/override-print.css
