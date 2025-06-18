@@ -1,6 +1,6 @@
 # Project info
-site_name: IBM watsonx Code Assistant - Modernize Applications
-site_description: IBM watsonx Code Assistant - Modernize Applications
+site_name: IBM watsonx Code Assistant - Modernizing Applications
+site_description: IBM watsonx Code Assistant - Modernizing Applications
 site_author: Christopher Bienko (cdbienko@us.ibm.com)
 copyright: Copyright &copy; 2025 IBM
 
@@ -13,7 +13,7 @@ docs_dir: docs
 nav:
   - Table of Contents: toc.md
   - Introduction: 'index.md'
-  - Application Modernization - WebSphere to Liberty:
+  - Modernizing WebSphere to Liberty:
     - 1. Objectives and requirements: 'appmod/1.md'
     - 2. Basic migration capabilities: 'appmod/2.md'
     - 3. Configuration management: 'appmod/3.md'
@@ -49,7 +49,7 @@ plugins:
   - glightbox
   - print-site:
       add_to_navigation: false
-      print_page_title: 'IBM watsonx Code Assistant Level 4 Lab Guide'
+      print_page_title: 'IBM watsonx Code Assistant: Modernizing Applications — Lab Guide'
       add_print_site_banner: false
       # Table of contents
       add_table_of_contents: false

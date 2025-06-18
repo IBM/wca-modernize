@@ -27,7 +27,7 @@
 - [3. WCA portfolio](index.md)
 - [4. Curriculum](index.md)
 
-## Application Modernization - WebSphere to Liberty
+## Modernizing WebSphere to Liberty
 - [1. Objectives and requirements](appmod/1.md)
 - [2. Basic migration capabilities](appmod/2.md)
 - [3. Configuration management](appmod/3.md)
