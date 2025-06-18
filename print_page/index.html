@@ -3847,10 +3847,12 @@ Once again, this recommendation has been specifically tailored for enterprise us
                         </h1>
                         <section class="print-page" id="saas-1"><h1 id="saas-1-objectives-and-requirementsibm-cloud-saas-configuration"><strong>Objectives and requirements</strong></br><em>IBM Cloud (SaaS) Configuration</em></h1>
 <h2 id="saas-1-i-about-this-lab"><strong>i. About this lab</strong></h2>
-<p>For the purposes of the Level 4 training curriculum, the hands-on components have been split across both on-premises and Software-as-a-Service (SaaS) environments on IBM Cloud. Both are supported by IBM Technology Zone (ITZ) infrastructure.</p>
-<p>The <a href="https://ibm.github.io/wca-l4/on-premises/1/" target="_blank"><strong>On-Premises Installation and Deployment</strong></a> modules extensively covers the process of preparing, installing, and deploying a full-stack IBM watsonx Code Assistant (WCA) service "on-premises" (OpenShift on VMware). However, resource and budget constraints for ITZ team means that <strong>GPUs are unavailable for on-premises training environments</strong> like the one deployed in those modules. The NVIDIA A100 or H100 GPUs required are simply too cost-prohibitive to be made available for individual IBMers and business partners. These costs are beyond the scope of what can be supported for training with on-premises environments.</p>
-<p>Fortunately, participants <strong><em>do</em> have access to GPUs for SaaS training environments</strong> on IBM Cloud. The <strong>IBM Cloud (SaaS) Configuration</strong> module will guide participants through the process of reserving the necessary <em>Standard</em> plan of WCA via ITZ and configuring the environment for use. Other modules in the L4 curriculum  (<strong><a href="https://ibm.github.io/wca-l4/appmod/1/" target="_blank">Application Modernization</a></strong>) will each leverage the SaaS environment configured in the following steps.</p>
-<p>There are two tiers of plans (editions) available for SaaS deployments of WCA:</p>
+<div class="admonition warning">
+<p class="admonition-title">OPTIONAL MATERIAL</p>
+<p>The following modules have been prepared for those who would like to replicate the configuration of a WCA environment on their local machines. These configuration steps will enable participants to authorize VS Code or Eclipse IDEs for use with <em>IBM watsonx Code Assistant</em> via extensions (or plug-ins), bypassing the need of working through a virtual machine. Instructions are available for doing so on both macOS and Windows operating system-based machines.</p>
+<p>The contents of this chapter are <strong>not</strong> included within the final evaluation test.</p>
+</div>
+<p>There are two tiers of plans (editions) available for Software-as-a-Service (SaaS) deployments of <strong>IBM watsonx Code Assistant</strong> (WCA):</p>
 <table>
 <thead>
 <tr>
@@ -3872,19 +3874,19 @@ Once again, this recommendation has been specifically tailored for enterprise us
 </tr>
 </tbody>
 </table>
-<p>To ensure that participants have access to the enterprise Java modernization capabilities, the instructions of this module call for provisioning a <strong>WCA Standard Plan</strong> as the basis of the SaaS environment.</p>
-<hr />
-<h2 id="saas-1-ii-prerequisites"><strong>ii. Prerequisites</strong></h2>
-<p>There are two high-level architectural components to WCA Standard Plan:</p>
 <div class="admonition note">
+<p>To ensure that participants have access to the enterprise Java modernization capabilities, the instructions of this module assume that the participant has access to a <strong>WCA Standard Plan</strong> license (and API key) as the basis of the SaaS environment.</p>
+</div>
+<p>There are two high-level architectural components to a WCA Standard Plan:</p>
 <ol>
 <li><strong>WCA extension</strong>: The interface through which developers interact with WCA, in the form of an extension (sometimes called a "plug-in") running in an integrated development environment (IDE). The IDEs currently supported by WCA are Visual Studio Code (VS Code) and Eclipse.</li>
 <li><strong>WCA service:</strong> The back-end WCA service, to which requests from the extension are made and the results returned to the participant's IDE. It is available as software-as-a-service (SaaS) on IBM Cloud and as deployable software for on-premises deployments.</li>
 </ol>
-</div>
 <hr />
-<h2 id="saas-1-iv-next-steps"><strong>iv. Next steps</strong></h2>
-<p>In the following section, participants will prepare a SaaS-based environment with the necessary services and configurations.</p></section><section class="print-page" id="saas-2"><h1 id="saas-2-2-configure-for-enterprise-java">2. Configure for enterprise Java</h1><h2 id="iii-configuring-the-environment"><strong>iii. Configuring the environment</strong></h2>
+<h2 id="saas-1-ii-prerequisites-and-wca-setup"><strong>ii. Prerequisites and WCA setup</strong></h2>
+<hr />
+<h2 id="saas-1-iii-next-steps"><strong>iii. Next steps</strong></h2>
+<p>In the following section, participants will configure their local machine with the necessary enterprise Java and Maven drivers.</p></section><section class="print-page" id="saas-2"><h1 id="saas-2-2-configure-for-enterprise-java">2. Configure for enterprise Java</h1><h2 id="iii-configuring-the-environment"><strong>iii. Configuring the environment</strong></h2>
 <p>A new tab will load to present the <strong>WCA Dashboard</strong>, which for a first-time login will automatically prompt you to configure the environment.</p>
 <hr />
 <ol start="12">
