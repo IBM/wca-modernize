@@ -1,75 +1,110 @@
 # **IBM watsonx Code Assistant**</br>*Modernize Applications*
 
-## **i. Introduction**
+## **i. Disclaimer**
 
 ---
 
-The curriculum of **IBM watsonx Code Assistant: Modernize Applications** is designed to teach IBM technical sellers and business partners on how to best plan, execute on, and deploy **IBM watsonx Code Assistant**. Level 4 learning plans assume that participants have the technical background and proficiency to demonstrate a product or solution to a client, as well as a deep level of understanding for how it can help the client achieve their business goals. Level 4 learning plans are the next logical learning step that goes beyond the demonstrations covered in the Level 3 learning. In keeping with the offering's hybrid cloud architecture, this will encompass deployments both on-premises and for Software-as-a-Service (SaaS) cloud.
+*© IBM Corporation 2025. All Rights Reserved.*
 
-The hands-on modules included within this GitHub documentation— and outlined in the section below —are part of a broader Level 4 curriculum hosted on *IBM YourLearning* and *IBM Training*. To view the curriculum in its entirety and receive full accreditation for completing the Level 4 material, visit the following links:
+IBM’s statements regarding its plans, directions and intent are subject to change or withdrawal without notice at IBM’s sole discretion. Information regarding potential future products is intended to outline our general product direction and it should not be relied on in making a purchasing decision. The information mentioned regarding potential future products is not a commitment, promise, or legal obligation to deliver any material, code or functionality. Information about potential future products may not be incorporated into any contract. The development, release, and timing of any future features or functionality described for our products remains at our sole discretion.
 
-!!! warning ""
-	**IBM YourLearning (IBMers):** <a href="https://yourlearning.ibm.com/activity/PLAN-5C0B3BB33307" target="_blank">https://yourlearning.ibm.com/activity/PLAN-5C0B3BB33307</a>
-	
-    **IBM Training (Business Partners):** <a href="https://www.ibm.com/training/learning-path/watsonx-code-assistant-level-4-1012" target="_blank">https://www.ibm.com/training/learning-path/watsonx-code-assistant-level-4-1012</a>
+References in this documentation to IBM products, programs, or services do not imply that they will be available in all countries in which IBM operates. Product release dates and/or capabilities referenced in this presentation may change at any time at IBM’s sole discretion based on market opportunities or other factors and are not intended to be a commitment to future product or feature availability in any way. Nothing contained in these materials is intended to, nor shall have the effect of, stating or implying that any activities undertaken by you will result in any specific sales, revenue growth, or other results. 
+
+All client examples described are presented as illustrations of how those clients have used IBM products and the results they may have achieved. Actual environmental costs and performance characteristics may vary by client.
+
+## **ii. Generative AI opportunity**
+
+---
+
+Two years ago, it would have been difficult to imagine the tremendous pace of development in domains like large language models (LLMs) and generative AI (gen AI). Ten years ago, these technologies were largely relegated to the areas of academic research and science fiction speculation. Today, they are propelling the next wave of productivity for businesses and their workforce.
+
+Such rapid advances in so short a span of time are fueling ever-increasing excitement. As every industry and enterprise grapples with these changes, it's clear that gen AI brings new opportunities, poses new challenges, and necessitates innovation.
+
+---
+
+![](_attachments/intro-1.3.png)
+!!! note ""
+    1. **Opportunity:** *4.4 trillion in productivity: Economic Potential of generative AI, McKinsey, June 2023*: [LINK](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier)
+    2. **Challenges:** *2.4x annual increase in training costs: Cottier et al, The rising costs of training frontier AI models, May 2024*: [LINK](https://arxiv.org/abs/2405.21015)
+    3. **Innovation:** *1/3 of interactions with Gen AI services will invoke action models or agents by 2028: Gartner press release, March 2024*: [LINK](https://www.gartner.com/en/newsroom/press-releases/2024-03-11-gartner-predicts-one-third-of-interactions-with-genai-services-will-use-action-models-and-autonomous-agents-for-task-completion-by-2028)
 
 </br>
-The "Practitioners" (Deploy) coursework extensively covers deployment of the service for both on-premises and IBM Cloud environments. Before taking this course, those enrolling should have earned the **<a href="https://www.credly.com/org/ibm/badge/watsonx-code-assistant-sales-foundation" target="_blank">watsonx Code Assistant Sales Foundation</a>** badge and the **<a href="https://www.credly.com/org/ibm/badge/watsonx-code-assistant-technical-sales-intermediate" target="_blank">watsonx Code Assistant Technical Sales Intermediate</a>** badge, and have the technical background and proficiency at giving hands-on demos to clients.
+In terms of opportunity, McKinsey predicts that gen AI could add up to $4.4 trillion USD in value to global corporate profits annually. Doing so, however, will require business leaders to find the right answers to serious challenges: for example, how to mitigate the ballooning costs for training frontier AI models, which in 2025 is rising at a rate of 2.4X each year? In the face of these opportunities and challenges, humanity's innovative spirit is driving the greatest change: as AI advances from models, to assistants, to autonomous AI agents. In just a few years, Gartner predicts that one-third of all interactions with gen AI will be facilitated through the use of agents.
 
-## **ii. WCA Portfolio**
+Combined, gen AI and application modernization fuel a virtuous cycle of increased agility and revenue growth. This dynamic blend has the power to enable a Chief Information Officer to greet key modernization challenges with unprecedented confidence.
+
+---
+
+![](_attachments/intro-1.4.png)
+!!! note ""
+    1. **The CEO’s guide to generative AI and application modernization**: *IBM Institute for Business Value, 15 August 2023*: [LINK](https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/ceo-generative-ai/application-modernization)
+    
+</br>    
+79% of responding executives to an IBM Institute for Business Value study said that using gen AI in application modernization projects will increase their overall business agility.
+
+Integrating existing systems with modern applications creates perpetual challenges for an IT organization. Adapting and applying gen AI to tackle modernization challenges can help simplify the entire application modernization journey, accelerating how quickly businesses achieve these goals. Through gen AI-powered code conversion, code generation, code reverse engineering, and transformation planning, IBM clients have seen first-hand how they are able to address common modernization challenges, improve employee productivity, and reduce their costs.
 
 ---
 
-**IBM watsonx Code Assistant** (**WCA**) is the flagship offering in a suite of generative AI (gen AI) code assistant products, which also include offerings for Ansible Automation Platform (via IBM watsonx Code Assistant for Red Hat Ansible Lightspeed) and IBM Z modernization (via IBM watsonx Code Assistant for Z).
+![](_attachments/intro-1.5.png)
+!!! note ""
+    1. **IDC**: *AI Coding Assistants for Application Modernization and IT Automation (March 2024)*
+    2. **IDC**: *Market Note, 1 Billion New Logical Applications (April 2024)*: [LINK](https://www.idc.com/getdoc.jsp?containerId=US51953724)
 
-The WCA portfolio accelerates Software Development Lifecycle (SDLC) tasks with AI-powered capabilities including context-aware code generation, explanation, documentation, translation, and unit test generation. It does so while maintaining the principles of trust, security, and compliance with regards to IBM client's data and intellectual property (IP).
+When technical debt accumulates across various aspects of your IT infrastructure, such as code, architecture and documentation, identifying, prioritizing, and resolving the complexities can become a Herculean task. This is simply no longer the case with gen AI. When a company uses it to take on technical debt, they can accomplish tasks and achieve outcomes that were otherwise impossible. Enterprise-grade AI provides capabilities that improve issue classification, generate code for issue resolution and set up context-sensitive automation, significantly cutting down the time that developers spend fixing code.
+
+With AI-enabled automation, developers can also reduce the time they spend provisioning cloud infrastructure, applying patches, and performing maintenance. From implementing faster code debugging and enabling better document generation to driving automation efforts, gen AI is designed to help reduce your technical debt and accelerate your modernization efforts one prompt at a time.
+
+In the era of gen AI, executives and business leaders recognize the tremendous potential this technology has for modernizing their services, their ways of working with applications and data, and their workforce. According to International Data Corporation (IDC), 83% of these executives agree that modernization of cumbersome, legacy applications is central to remaining competitive in their marketplace, and therefore critical to their business strategy.
+
+But while the vast majority of businesses recognize the imperative of modernizing applications and their workforce, only 27% of those companies have successfully modernized their workflows – leaving an untapped market of 73% that have yet to modernize such workflows. It turns out that changing patterns of work, IT culture, and the software development lifecycle are much more demanding tasks than anticipated. 
+
+As these companies look to modernize legacy applications using gen AI, they are in parallel tapping into the technology’s tremendous potential to speed up delivery of new applications and rapidly churn out new code. The result has been a proliferation of net-new and ever-growing applications — which the IDC anticipates will exceed one billion new applications by 2028. The result of this will be more code bases that enterprise organizations need to maintain and modernize; more applications that they will need to support and secure; and ultimately, an ever-increasing amount of technical debt that these organizations will accrue.
+
+To succeed, gen AI and coding assistants must be able to go beyond writing code — they need to support the entirety of code lifecycle management.
+
+## **iii. WCA portfolio**
 
 ---
+
+**IBM watsonx Code Assistant** is the flagship offering in a suite of gen AI code assistant products, which also include:
+
+- **[IBM watsonx Code Assistant for Z](https://www.ibm.com/products/watsonx-code-assistant-z)** for IBM Z code modernization
+- **[IBM watsonx Code Assistant for Red Hat Ansible Lightspeed](https://www.ibm.com/products/watsonx-code-assistant-ansible-lightspeed)** for Red Hat Ansible Automation Platform (AAP) and YAML-based Playbooks
+- **[IBM watsonx Code Assistant for i](https://www.ibm.com/products/watsonx-code-assistant-for-i)** *coming soon in 2025* for RPG-based application code modernization
 
 ![](_attachments/intro-1.1.png)
-
----
-
-WCA offerings are powered by IBM Granite foundation models that include state-of-the-art large language models (LLMs) designed for code. For offerings such as WCA for Ansible Lightspeed and WCA for Z, bespoke code models— tailored to working with Ansible Automation Platform and COBOL-to-Z use cases, respectively —are invoked. Universally true for all of the WCA offerings is that they are geared towards helping IT teams create high-quality code using AI-generated recommendations, based on natural language requests or existing source code. These AI models, and the recommendations they generate, are seamlessly integrated via extensions with the world's most popular integrated development environments (IDEs) – including Visual Studio Code and Eclipse.
+!!! note ""
+    WCA offerings are powered by IBM Granite foundation models that include state-of-the-art LLMs designed for code. For offerings such as *WCA for Ansible Lightspeed* and *WCA for Z*, bespoke code models— tailored to working with Ansible Automation Platform and COBOL-to-Z use cases, respectively —are invoked.
 
 </br>
-!!! note "USE CASES TO PURSUE"
-    The flagship offering, IBM watsonx Code Assistant is the premiere IBM technology for generating enterprise-grade code and applications using IBM Granite large language models (LLMs). It has a wide gamut of capabilities which will be covered in subsequent sections of this presentation. When prospecting clients, look out for use cases involving: real-time code recommendations; chat with code capabilities; code explainability; automated generation of code documentation; code testing and validation; as well as modernization of enterprise Java code.
+The WCA portfolio accelerates Software Development Lifecycle (SDLC) tasks with AI-powered capabilities including context-aware code generation, explanation, documentation, translation, and unit test generation. It does so while maintaining the principles of trust, security, and compliance with regards to IBM client's data and intellectual property (IP).
 
-    **IBM watsonx Code Assistant for Red Hat Ansible Lightspeed** (or "WCA for Ansible Lightspeed" in shorthand) allows clients to write automation jobs faster with AI-generated recommendations, using natural language prompts to instruct the solution on the types of automation jobs that require generation. Look out for use cases and opportunities with clients that involve enterprise organizations deploying (or automating) IT infrastructure with the Red Hat Ansible Automation Platform (AAP), which is a required enterprise license for using WCA for Ansible Lightspeed.
-
-    **IBM watsonx Code Assistant for Z** (or "WCA for Z" in shorthand) is IBM's solution for selectively modernizing COBOL business services into Java applications running on IBM Z mainframe systems. Look out for client opportunities or use cases that involve integrating refactored COBOL (or Java) code into existing COBOL applications running on IBM Z, where it's critical that the full interoperability is maintained between environments and that quality of service is maintained.
-
-</br>
-
-The portfolio of solutions under the IBM watsonx Code Assistant family is expansive in terms of capabilities and the types of use cases that can be addressed. Aligning the best-fit solution to the appropriate use cases, languages, applications, and infrastructure is critical. Use the following guidelines to help shape client discussions and opportunities.
+Universally true for all of the WCA offerings is that they are geared towards helping IT teams create high-quality code using AI-generated recommendations, based on natural language requests or existing source code. These AI models, and the recommendations they generate, are seamlessly integrated via extensions with the world's most popular integrated development environments (IDEs) – including Visual Studio Code and Eclipse.
 
 ---
 
 ![](_attachments/intro-1.2.png)
-
----
-
-IBM watsonx Code Assistant supports over 115 different programming languages for code. In particular, languages and formats such as Java, C, JSON, JavaScript, HTML, and PHP are subjects in which WCA “Majors” and excels. Other languages such as Ruby, SQL, and Swift could be considered “Minors” where the generalized code model can work with the language, but has less training data to base those recommendations on. These percentages and training data volumes will continue to evolve as the Granite code models mature. WCA is also available via Software-as-a-Service (SaaS) consumption on cloud and deployable on-premises, which is a unique differentiator over other gen AI code solutions in the marketplace.
+!!! note ""
+    The portfolio of solutions under the *IBM watsonx Code Assistant* family is expansive in terms of capabilities and the types of use cases that can be addressed. Aligning the best-fit solution to the appropriate use cases, languages, applications, and infrastructure is critical for every business.
 
 </br>
-!!! note "LANGUAGES, APPLICATIONS, AND INFRASTRUCTURE TO PURSUE"
-    For those familiar with other WCA offerings— such as IBM watsonx Code Assistant for Red Hat Ansible Lightspeed and IBM watsonx Code Assistant for Z —the generalized code model approach taken by WCA differs from the specialized code model approach of those two aforementioned offerings.
 
-    The **WCA for Ansible Lightspeed** flavor of IBM Granite code models specializes (”Majors") only in Red Hat Ansible Playbooks and YAML (Yet Another Markup Language) formats. Similarly, the IBM Granite code model used by **WCA for Z** specializes in transforming COBOL mainframe code into modernized Java code for IBM Z systems. Ansible Playbooks and COBOL are supported (”Minor") languages for the generalized IBM Granite code models— and therefore are supported by WCA —but if a client wishes to specialize in those particular languages and frameworks, they would be well advised to utilize the bespoke **WCA for Ansible Lightspeed** and **WCA for Z** offerings to do so.
+IBM watsonx Code Assistant supports over 115 different programming languages for code. In particular, languages and formats such as Java, C, JSON, JavaScript, HTML, and PHP are subjects in which WCA “Majors” and excels. Other languages such as Ruby, SQL, and Swift could be considered “Minors” where the generalized code model can work with the language, but has less training data to base those recommendations on. These percentages and training data volumes will continue to evolve as the Granite code models mature.
 
-    For **WCA for Ansible Lightspeed**, hone in on opportunities involving: Ansible Playbooks, AAP environments, YAML-based automation scripts, and containerized applications running atop of Red Hat OpenShift.
+WCA is available via Software-as-a-Service (SaaS) consumption on cloud *and* deployable on-premises, which is a unique differentiator over other gen AI code solutions in the marketplace.
 
-    For **WCA for Z**, focus on opportunities involving: z/OS application modernization, COBOL to modernized Java transformations, and COBOL to IBM Z mainframe use cases.
-
-## **iii. Curriculum**
+## **iv. Curriculum**
 
 ---
 
-The curriculum for the Level 4 hands-on labs is segmented across 3 chapters, each containing multiple modules that address topics of on-premises cluster deployments, configuration of Software-as-a-Service (SaaS) deployments on cloud, and modernization of legacy WebSphere Application Server code into WebSphere Liberty.
+The core curriculum for this course is segmented across the *Application Modernization - WebSphere to Liberty* chapter — the details of which are outlined and hypedlinked below. It is recommended you start with the Objectives and Requirements module first, then work your way sequentially from there.
+
+A second, **optional** chapter titled *IBM Cloud (SaaS) Configuration* has also been prepared for those who would like to replicate configuration of a WCA environment on their local machines. These configuration steps will enable you to authorize VS Code or Eclipse IDEs for use with IBM watsonx Code Assistant via extensions (or plug-ins), bypassing the need of working through a virtual machine. Instructions are available for doing so on both macOS and Windows operating system-based machines.
+
+At the conclusion of the hands-on modules, participants will need to pass a final evaluation quiz to receive credit via IBM Training. Instructions for how to test-out with the quiz, and the criteria needed to pass, are available from the main IBM Training course page.
 
 | CHAPTER | MODULES |
 | - | - |
-| <a href="https://ibm.github.io/wca-l4/on-premises/1/" target="_blank">**On-Premises Installation and Deployment**</a> | <a href="https://ibm.github.io/wca-l4/on-premises/1/" target="_blank">1. Objectives and requirements</a></br><a href="https://ibm.github.io/wca-l4/on-premises/2/" target="_blank">2. Reserve an environment</a></br><a href="https://ibm.github.io/wca-l4/on-premises/3/" target="_blank">3. Bastion host setup</a></br><a href="https://ibm.github.io/wca-l4/on-premises/4/" target="_blank">4. Cluster preparation</a></br><a href="https://ibm.github.io/wca-l4/on-premises/5/" target="_blank">5. Install prerequisite software</a></br><a href="https://ibm.github.io/wca-l4/on-premises/6/" target="_blank">6. Install IBM Software Hub</a></br><a href="https://ibm.github.io/wca-l4/on-premises/7/" target="_blank">7. Install IBM watsonx Code Assistant</a> |
-| <a href="https://ibm.github.io/wca-l4/saas/1/" target="_blank">**IBM Cloud (SaaS) Configuration**</a> | <a href="https://ibm.github.io/wca-l4/saas/1/" target="_blank">1. Objectives and requirements</a></br><a href="https://ibm.github.io/wca-l4/saas/2/" target="_blank">2. Reserve an environment</a></br><a href="https://ibm.github.io/wca-l4/saas/3/" target="_blank">3. Configure the Java environment</a></br><a href="https://ibm.github.io/wca-l4/saas/4/" target="_blank">4. Install VS Code extension</a></br><a href="https://ibm.github.io/wca-l4/saas/5/" target="_blank">5. Install Eclipse plug-in</a> |
-| <a href="https://ibm.github.io/wca-l4/appmod/1/" target="_blank">**Application Modernization - WebSphere to Liberty**</a> | <a href="https://ibm.github.io/wca-l4/appmod/1/" target="_blank">1. Objectives and requirements</a></br><a href="https://ibm.github.io/wca-l4/appmod/2/" target="_blank">2. Basic migration capabilities</a></br><a href="https://ibm.github.io/wca-l4/appmod/3/" target="_blank">3. Configuration management</a></br><a href="https://ibm.github.io/wca-l4/appmod/4/" target="_blank">4. APIs and libraries</a></br><a href="https://ibm.github.io/wca-l4/appmod/5/" target="_blank">5. EJB modernization</a></br><a href="https://ibm.github.io/wca-l4/appmod/6/" target="_blank">6. JMS integration</a></br><a href="https://ibm.github.io/wca-l4/appmod/7/" target="_blank">7. Security modernization</a></br><a href="https://ibm.github.io/wca-l4/appmod/8/" target="_blank">8. Full stack modernization</a> |
+| <a href="https://ibm.github.io/wca-modernize/appmod/1/" target="_blank">**Application Modernization - WebSphere to Liberty**</a> | <a href="https://ibm.github.io/wca-modernize/appmod/1/" target="_blank">1. Objectives and requirements</a></br><a href="https://ibm.github.io/wca-modernize/appmod/2/" target="_blank">2. Basic migration capabilities</a></br><a href="https://ibm.github.io/wca-modernize/appmod/3/" target="_blank">3. Configuration management</a></br><a href="https://ibm.github.io/wca-modernize/appmod/4/" target="_blank">4. APIs and libraries</a></br><a href="https://ibm.github.io/wca-modernize/appmod/5/" target="_blank">5. EJB modernization</a></br><a href="https://ibm.github.io/wca-l4/appmod/6/" target="_blank">6. JMS integration</a></br><a href="https://ibm.github.io/wca-modernize/appmod/7/" target="_blank">7. Security modernization</a></br><a href="https://ibm.github.io/wca-modernize/appmod/8/" target="_blank">8. Full stack modernization</a> |
+| <a href="https://ibm.github.io/wca-modernize/saas/1/" target="_blank">**IBM Cloud (SaaS) Configuration**</a> | <a href="https://ibm.github.io/wca-modernize/saas/1/" target="_blank">1. Objectives and requirements</a></br><a href="https://ibm.github.io/wca-modernize/saas/2/" target="_blank">2. Configure the Java environment</a></br><a href="https://ibm.github.io/wca-modernize/saas/3/" target="_blank">3. Install VS Code extension</a></br><a href="https://ibm.github.io/wca-modernize/saas/4/" target="_blank">4. Install Eclipse plug-in</a> |
