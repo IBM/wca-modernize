@@ -789,8 +789,57 @@ The approach taken with each module of <strong>Modernizing WebSphere to Liberty<
 <p>Thinking about modernization in discrete scenarios such as these, where the aperture is narrowly focused on a specific piece of functionality or use case— rather than trying to modernize an entire, complex application stack altogether —has immense value. It is far more akin and practical to the real-world scenarios that <em>you</em> will encounter during engagements with other organizations or enterprises in the marketplace. Entrusted with bestowing best practices for how that organization can modernize specific pain points in their application code; <em>not</em> taking on the task of modernizing the <em>entirety</em> of their application stack "in one go."</p>
 <p>Crafting complex modernization plans for enterprise-scale applications cannot be approached as explicit "A, then B, followed by C" rulebooks or rigid decision trees. It is essential that you understand how to approach modernization as a collaborative, problem-solving oriented, question-and-answer refinement exercise. WCA Chat, which you will use to these ends in the following modules, is an ideal mechanism for refining the correct modernization approach.</p>
 <hr />
-<h2 id="appmod-1-ii-prerequisites"><strong>ii. Prerequisites</strong></h2>
-<p>This lab requires that participants have previously completed the <a href="https://ibm.github.io/wca-l4/saas/1/" target="_blank"><strong>IBM Cloud (SaaS) Configuration</strong></a> lab in its entirety. Those conducting the hands-on sections of this lab will require access to a deployed instance of WCA Standard Plan and have successfully integrated with the WCA service via either the <strong>Visual Studio Code</strong> (<strong>VS Code</strong>) extension or <strong>Eclipse IDE</strong> plug-ins.</p>
+<h2 id="appmod-1-ii-prerequisites-and-setup"><strong>ii. Prerequisites and Setup</strong></h2>
+<p>This lab requires that participants configure the unique <strong>watsonx Code Assistant Standard Plan</strong> entitlement that was provisioned and assigned exclusively for this hands-on IBM Training course. These IBM Cloud environments are single-tenant and assigned and enrollment time to each participant; as such, they require a few steps of configuration before the API access key can be created and the code generation labs can begin.</p>
+<p>Upon enrolling in the <strong>watsonx Code Assistant: Modernizing Applications (<em>W7S220G</em>)</strong> course, you will receive at least one email with the following header: <code>Account: Action required: You are invited to join an account in IBM Cloud</code></p>
+<p>This email indicates that your WCA Standard Plan has been successfully provisioned on IBM Cloud. Its contents include additional steps required by the administrator (you) to perform in order to fully configure the WCA plan's API key for use with integrated development environments (IDE) — such as the Visual Studio Code environment provided within the hands-on virtual machine (VM).</p>
+<hr />
+<ol>
+<li>
+<p>Steps must be taken to link the WCA service and IBM Cloud accounts at this time.</p>
+<ul>
+<li>Click the <strong>Join now</strong><sup>[A]</sup> button within the body of the <em>Account: Action required: You are invited to join an account in IBM Cloud</em> email</li>
+<li>A web browser tab will launch and redirect to IBM Cloud</li>
+</ul>
+<p></br>
+<a class="glightbox" href="../appmod/1/_attachments/saas-2.5a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt=""  src="../appmod/1/_attachments/saas-2.5a.png" width="400" /></a>
+</br>
+<a class="glightbox" href="../appmod/1/_attachments/saas-2.5b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt=""  src="../appmod/1/_attachments/saas-2.5b.png" width="400" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="2">
+<li>
+<p>Check the <strong>I accept the product Terms and Conditions of this registration form</strong><sup>[A]</sup> box under the <em>Account Notice</em> header, then click <strong>Join account</strong><sup>[B]</sup> to continue.</p>
+<p></br>
+<a class="glightbox" href="../appmod/1/_attachments/saas-2.6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../appmod/1/_attachments/saas-2.6.png" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="3">
+<li>
+<p>You will be presented with a prompt asking for your permission to switch your assigned IBM Cloud account — which will resemble something like <code>itz-watsonx-24</code>. Click <strong>Proceed</strong><sup>[A]</sup> to confirm.</p>
+<div class="admonition note">
+<p class="admonition-title">LOCATING THE ACCOUNT NAME</p>
+<p>Participants can retrieve the name of the WCA service account (<code>itz-watsonx-24</code>, etc.) by looking at the contents of the <strong>Account: Action required: You are invited to join an account in IBM Cloud</strong> email: <em>IBM Technology Zone invited you to join the following IBM Cloud account: itz-watsonx-...</em></p>
+</div>
+<p></br>
+<a class="glightbox" href="../appmod/1/_attachments/saas-2.7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../appmod/1/_attachments/saas-2.7.png" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="4">
+<li>
+<p>The IBM Cloud dashboard will now load within your web browser. At this time, confirm you are logged in under the WCA service account by inspecting the drop-down menu<sup>[A]</sup> as shown in the screenshot below.</p>
+<div class="admonition note">
+<p class="admonition-title">SWITCHING BETWEEN IBM CLOUD ACCOUNTS</p>
+<p>You can toggle between various IBM Cloud accounts at-will. However, for the purposes of this lab it's best that you remain under the WCA service<sup>[B]</sup> account.</p>
+</div>
+<p></br>
+<a class="glightbox" href="../appmod/1/_attachments/saas-2.8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../appmod/1/_attachments/saas-2.8.png" /></a></p>
+</li>
+</ol>
+<hr />
 <hr />
 <h2 id="appmod-1-iii-hands-on-topics"><strong>iii. Hands-on topics</strong></h2>
 <p>For each module of the <em>Modernizing WebSphere to Liberty</em> lab, participants will have the opportunity to dissect the contents and purpose of legacy <strong>WebSphere Application Server</strong> (<strong>WAS</strong>) code, examine its limitations in the context of more up-to-date alternatives, and then compare that to a best-practices implementation of that equivalent codebase written in <strong>WebSphere Liberty</strong>.</p>
@@ -3854,7 +3903,6 @@ Once again, this recommendation has been specifically tailored for enterprise us
 </div>
 <p></br>
 There are two tiers of plans (editions) available for Software-as-a-Service (SaaS) deployments of <strong>IBM watsonx Code Assistant</strong> (WCA):</p>
-<p></br></p>
 <table>
 <thead>
 <tr>
@@ -3879,13 +3927,14 @@ There are two tiers of plans (editions) available for Software-as-a-Service (Saa
 <div class="admonition note">
 <p>To ensure that participants have access to the enterprise Java modernization capabilities, the instructions of this module assume that the participant has access to a <strong>WCA Standard Plan</strong> license (and API key) as the basis of the SaaS environment.</p>
 </div>
+<hr />
+<h2 id="saas-1-ii-prerequisites-and-wca-setup"><strong>ii. Prerequisites and WCA setup</strong></h2>
 <p>There are two high-level architectural components to a WCA Standard Plan:</p>
 <ol>
 <li><strong>WCA extension</strong>: The interface through which developers interact with WCA, in the form of an extension (sometimes called a "plug-in") running in an integrated development environment (IDE). The IDEs currently supported by WCA are Visual Studio Code (VS Code) and Eclipse.</li>
 <li><strong>WCA service:</strong> The back-end WCA service, to which requests from the extension are made and the results returned to the participant's IDE. It is available as software-as-a-service (SaaS) on IBM Cloud and as deployable software for on-premises deployments.</li>
 </ol>
-<hr />
-<h2 id="saas-1-ii-prerequisites-and-wca-setup"><strong>ii. Prerequisites and WCA setup</strong></h2>
+<p>As mentioned previously, it's assumed that those following these instructions already have an entitlement (valid license) to watsonx Code Assistant's Standard (SaaS) plan.</p>
 <hr />
 <h2 id="saas-1-iii-next-steps"><strong>iii. Next steps</strong></h2>
 <p>In the following section, participants will configure their local machine with the necessary enterprise Java and Maven drivers.</p></section><section class="print-page" id="saas-2"><h1 id="saas-2-configure-the-enterprise-java-environmentibm-cloud-saas-configuration"><strong>Configure the enterprise Java environment</strong></br><em>IBM Cloud (SaaS) Configuration</em></h1>
