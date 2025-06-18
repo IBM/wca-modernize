@@ -641,8 +641,8 @@
 
 
 <h1 id="full-stack-modernizationmodernizing-websphere-to-liberty"><strong>Full stack modernization</strong></br><em>Modernizing WebSphere to Liberty</em></h1>
-<h2 id="i-objectives"><strong>i. Objectives</strong></h2>
 <hr />
+<h2 id="i-objectives"><strong>i. Objectives</strong></h2>
 <p>As a capstone to the experimentation and feature-exploration conducted with <strong>IBM watsonx Code Assistant</strong> (<strong>WCA</strong>) in the previous modules of this lab, participants will conclude the <em>Application Modernization</em> topic with a hands-on opportunity: modernization of a full-stack WebSphere Application Service (WAS) application into WebSphere Liberty.</p>
 <p>Participants will be tasked with:</p>
 <ul>
@@ -652,6 +652,7 @@
 <li>Code recommendations will be generated using <em>WCA Chat</em>, as in the previous modules, alongside the <em>Modernize</em> and <em>Java Upgrade</em> capabilities built into WCA Standard plans</li>
 </ul>
 <p>The culmination of this work will be a fully modernized and interactive web application that tangibly demonstrates the benefits of the techniques discussed throughout this lab.</p>
+<hr />
 <h2 id="ii-setting-up"><strong>ii. Setting up</strong></h2>
 <p>Return to the Visual Studio Code (VS Code) application. It should already be signed in and authenticated with the WCA service on IBM Cloud — if it's not, follow the instructions in the <a href="https://ibm.github.io/wca-l4/saas/4/#iii-install-the-extension" target="_blank"><strong>IBM Cloud (SaaS) Configuration</strong></a> lab.</p>
 <hr />
@@ -705,8 +706,9 @@
 </ul>
 </li>
 </ol>
+<hr />
 <h2 id="iii-deploy-the-application"><strong>iii. Deploy the application</strong></h2>
-<p>Participants now need to build the application <em>Project</em>. </p>
+<p>Participants now need to build the application <em>Project</em>.</p>
 <hr />
 <ol start="4">
 <li>
@@ -780,6 +782,7 @@
 <a class="glightbox" href="../_attachments/appmod-8.8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/appmod-8.8.png" /></a></p>
 </li>
 </ol>
+<hr />
 <h2 id="iv-explain-the-project-code"><strong>iv. Explain the project code</strong></h2>
 <p>Let's better understand the entirety of the project by using the <strong>explainability</strong> features built into watsonx Code Assistant.</p>
 <hr />
@@ -800,6 +803,7 @@
 <a class="glightbox" href="../_attachments/appmod-8.9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/appmod-8.9.png" /></a></p>
 </li>
 </ol>
+<hr />
 <h2 id="v-build-a-modernization-plan"><strong>v. Build a modernization plan</strong></h2>
 <p>Before modernizing the WAS application into Liberty, you'll need to scope out the necessary changes and level of effort required to do so. To obtain that understanding, you will need to generate a modernization plan using <strong><a href="https://www.ibm.com/products/cloud-pak-for-applications/transformation-advisor" target="_blank">IBM Cloud Transformation Advisor</a></strong>. For the purposes of this lab, one such plan has been prepared ahead of time and included within the <code>modresorts-twas-j8</code> project folder.</p>
 <hr />
@@ -985,6 +989,7 @@
 </div>
 </li>
 </ol>
+<hr />
 <h2 id="vi-java-version-upgrades"><strong>vi. Java version upgrades</strong></h2>
 <p>Recall from before that the application's version of Java code was originally written for <code>Java 8</code>. However, to be compliant with modern versions of Liberty, that Java code will need to be upgraded to <code>Java 21</code>.</p>
 <hr />
