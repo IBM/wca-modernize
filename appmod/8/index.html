@@ -405,43 +405,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ii-setting-up" class="md-nav__link">
-    ii. Setting up
+  <a href="#ii-deploy-the-application" class="md-nav__link">
+    ii. Deploy the application
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-deploy-the-application" class="md-nav__link">
-    iii. Deploy the application
+  <a href="#iii-explain-the-project-code" class="md-nav__link">
+    iii. Explain the project code
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#iv-explain-the-project-code" class="md-nav__link">
-    iv. Explain the project code
+  <a href="#iv-build-a-modernization-plan" class="md-nav__link">
+    iv. Build a modernization plan
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#v-build-a-modernization-plan" class="md-nav__link">
-    v. Build a modernization plan
+  <a href="#v-java-version-upgrades" class="md-nav__link">
+    v. Java version upgrades
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#vi-java-version-upgrades" class="md-nav__link">
-    vi. Java version upgrades
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vii-conclusion" class="md-nav__link">
-    vii. Conclusion
+  <a href="#vi-conclusion" class="md-nav__link">
+    vi. Conclusion
   </a>
   
 </li>
@@ -585,43 +578,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ii-setting-up" class="md-nav__link">
-    ii. Setting up
+  <a href="#ii-deploy-the-application" class="md-nav__link">
+    ii. Deploy the application
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-deploy-the-application" class="md-nav__link">
-    iii. Deploy the application
+  <a href="#iii-explain-the-project-code" class="md-nav__link">
+    iii. Explain the project code
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#iv-explain-the-project-code" class="md-nav__link">
-    iv. Explain the project code
+  <a href="#iv-build-a-modernization-plan" class="md-nav__link">
+    iv. Build a modernization plan
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#v-build-a-modernization-plan" class="md-nav__link">
-    v. Build a modernization plan
+  <a href="#v-java-version-upgrades" class="md-nav__link">
+    v. Java version upgrades
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#vi-java-version-upgrades" class="md-nav__link">
-    vi. Java version upgrades
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vii-conclusion" class="md-nav__link">
-    vii. Conclusion
+  <a href="#vi-conclusion" class="md-nav__link">
+    vi. Conclusion
   </a>
   
 </li>
@@ -642,7 +628,7 @@
 
 <h1 id="full-stack-modernizationmodernizing-websphere-to-liberty"><strong>Full stack modernization</strong></br><em>Modernizing WebSphere to Liberty</em></h1>
 <h2 id="i-objectives"><strong>i. Objectives</strong></h2>
-<p>As a capstone to the experimentation and feature-exploration conducted with <strong>IBM watsonx Code Assistant</strong> (<strong>WCA</strong>) in the previous modules of this lab, participants will conclude the <em>Application Modernization</em> topic with a hands-on opportunity: modernization of a full-stack WebSphere Application Service (WAS) application into WebSphere Liberty.</p>
+<p>As a capstone to the experimentation and feature-exploration conducted with <strong>IBM watsonx Code Assistant</strong> (<strong>WCA</strong>) in the previous modules of this chapter, participants will conclude the topic with a hands-on opportunity: modernization of a full-stack WebSphere Application Service (WAS) application into WebSphere Liberty.</p>
 <p>Participants will be tasked with:</p>
 <ul>
 <li>Explaining the purpose of the legacy WAS code and detailing the necessary transformations</li>
@@ -650,96 +636,35 @@
 <li>Upgrading Java versions from <code>Java 8</code> to <code>Java 21</code></li>
 <li>Code recommendations will be generated using <em>WCA Chat</em>, as in the previous modules, alongside the <em>Modernize</em> and <em>Java Upgrade</em> capabilities built into WCA Standard plans</li>
 </ul>
-<p>The culmination of this work will be a fully modernized and interactive web application that tangibly demonstrates the benefits of the techniques discussed throughout this lab.</p>
+<p>The culmination of this work will be a fully modernized and interactive web application that tangibly demonstrates the benefits of the techniques discussed throughout this chapter.</p>
 <hr />
-<h2 id="ii-setting-up"><strong>ii. Setting up</strong></h2>
-<p>Return to the Visual Studio Code (VS Code) application. It should already be signed in and authenticated with the WCA service on IBM Cloud — if it's not, follow the instructions in the <a href="https://ibm.github.io/wca-l4/saas/4/#iii-install-the-extension" target="_blank"><strong>IBM Cloud (SaaS) Configuration</strong></a> lab.</p>
+<h2 id="ii-deploy-the-application"><strong>ii. Deploy the application</strong></h2>
+<p>Return to the Visual Studio Code (VS Code) application. It should already be signed in and authenticated with the WCA service on IBM Cloud.</p>
 <hr />
 <ol>
-<li>Ensure that the <strong>Explorer</strong> tab is cleared of any previously-opened folders or files before continuing. With the VS Code <strong>Explorer</strong> tab selected and open, click <strong>File</strong> &gt; <strong>Close Folder</strong> from the top taskbar.</li>
+<li>
+<p>Ensure that the <strong>Explorer</strong> tab is open to the <code>wca-assets-2025</code> directory. If it is not, you can locate those assets within the <code>Documents</code> directory of the VM.</p>
+<p>Participants will now need to build the application <em>Project</em>.</p>
+</li>
 </ol>
 <hr />
 <ol start="2">
 <li>
-<p>Additional software must be prepared within VS Code before continuing with WCA Standard Plan's enterprise capabilities for WebSphere modernization.</p>
-<div class="admonition note">
-<p class="admonition-title">INCOMPATIBILITY WITH JDK 24</p>
-<p>Note that the <em>Full stack modernization</em> module in <a href="https://ibm.github.io/wca-l4/appmod/8/#i-objectives" target="_blank"><strong>Modernizing WebSphere to Liberty</strong></a> will encounter compatibility errors with JDK 24 drivers when attempting to Explain or Modernize the source application. This is owing to a deprecation of <code>sun.misc.Unsafe</code> method as of March 2025. <a href="https://openjdk.org/jeps/498" target="_blank"><strong>Additional details may be found here.</strong></a></p>
-<p>As a result, participants in this lab should ensure they are running <strong>JDK 21</strong> (or as early as JDK 11), but specifically <em>not</em> JDK 24. If you are running JDK 24, you should uninstall the JDK from your machine and reinstall with the links provided in <a href="https://ibm.github.io/wca-l4/saas/3/" target="_blank"><strong>Configure the enterprise Java environment</strong></a>.</p>
-</div>
-<ul>
-<li>From the left-hand side of the VS Code interface, click the <strong>Extensions</strong> tab<ul>
-<li>Within the <em>Extensions: Marketplace</em> <strong>search bar</strong>, search for <code>Liberty Tools</code></li>
-<li>Click the blue <strong>Install</strong> button to the right of the <em>Liberty Tools</em> tile</li>
-<li>Dismiss any "Welcome" splash screens</li>
-</ul>
-</li>
-<li>Once the install is complete, return to the <strong>Extensions</strong> tab again<ul>
-<li>Within the <em>Extensions: Marketplace</em> <strong>search bar</strong>, search <code>Extension Pack for Java</code></li>
-<li>Click the blue <strong>Install</strong> to the right of the <em>Extension Pack for Java</em> tile</li>
-<li>Wait for the install to complete and dismiss any "Welcome" splash screens</li>
-</ul>
-</li>
-</ul>
-<p></br>
-<a class="glightbox" href="../_attachments/appmod-8.2a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/appmod-8.2a.png" /></a>
-</br>
-<a class="glightbox" href="../_attachments/appmod-8.2b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/appmod-8.2b.png" /></a>
-</br>
-<a class="glightbox" href="../_attachments/appmod-8.2c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/appmod-8.2c.png" /></a></p>
-</li>
-</ol>
-<hr />
-<ol start="3">
-<li>
-<p>Next, participants must download the WebSphere Application Server (WAS) assets that are to be modernized. The assets will be retrieved from the linked application repository:</p>
-<div class="admonition note">
-<p class="admonition-title"><code>wca-assets-2025.zip</code></p>
-<p><strong>URL:</strong> <a href="https://ibm.box.com/s/ps65ax6mupmwx3pww2b2ylvc9ed18njp" target="_blank">https://ibm.box.com/s/ps65ax6mupmwx3pww2b2ylvc9ed18njp</a></p>
-</div>
-<ul>
-<li><strong>Save</strong> the <code>wca-assets-2025.zip</code> file to your local machine and unzip the contents</li>
-<li>Open the <strong>Explorer</strong> tab from the VS Code interface</li>
-<li>Click the blue <strong>Open Folder</strong> button and select the unzipped <code>wca-assets-2025</code> directory</li>
-<li>The <code>wca-assets-2025</code> contents will automatically open within <strong>Explorer</strong></li>
-</ul>
-</li>
-</ol>
-<hr />
-<h2 id="iii-deploy-the-application"><strong>iii. Deploy the application</strong></h2>
-<p>Participants now need to build the application <em>Project</em>.</p>
-<hr />
-<ol start="4">
-<li>
 <p>Open a <strong>Terminal</strong> within VS Code (if you haven't already) by clicking <strong>Terminal</strong> &gt; <strong>New Terminal</strong> from the top taskbar.</p>
 <ul>
-<li>Navigate using the Terminal to the folder where <code>wca-assets-2025</code> was saved in <em>Step 3</em> and drill down <code>/1-java-modernization/modresorts-twas-j8/was_dependency</code> directory</li>
+<li>The console will automatically open to the root of the <code>wca-assets-2025</code> directory</li>
+<li>Drill down into the <code>/1-java-modernization/modresorts-twas-j8/was_dependency</code> subdirectory</li>
 <li><strong>Attention:</strong> Substitute the <code>&lt;REPLACE&gt;</code> placeholder with the path to <em>your</em> directory
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span> &lt;REPLACE&gt;/wca-assets-2025/1-java-modernization/modresorts-twas-j8/was_dependency
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span> <span class="m">1</span>-java-modernization/modresorts-twas-j8/was_dependency
 </code></pre></div></li>
-<li>Source the <code>~/.zshrc</code> <em>PATH</em> and <em>JAVA_HOME</em> variables (set up previously in the <a href="https://ibm.github.io/wca-l4/saas/3/" target="_blank"><strong>Configure the enterprise Java environment</strong></a> module) by executing the following:
+<li>Source the <code>~/.zshrc</code> <em>PATH</em> and <em>JAVA_HOME</em> variables by executing the following:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">source</span> ~/.zshrc
 </code></pre></div></li>
 </ul>
 </li>
 </ol>
 <hr />
-<ol start="5">
-<li>
-<p>The necessary Maven dependencies must be prepared within the <code>was_dependency</code> directory before the application can be deployed. Using a Terminal, <strong>execute</strong> the following instruction:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mvn install:install-file -Dfile<span class="o">=</span>was_public.jar -DpomFile<span class="o">=</span>was_public-9.0.0.pom
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">WINDOWS USERS</p>
-<p>Windows users might need to provide the full path for the build files <code>was_public.jar</code> and <code>was_public-9.0.0.pom</code>, for example:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mvm install:install-file -Dfile<span class="o">=</span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator.CE-APAC-WIND202<span class="se">\D</span>ocuments<span class="se">\w</span>ca4ej-workshop<span class="se">\m</span>odresorts<span class="se">\t</span>was<span class="se">\j</span><span class="m">8</span><span class="se">\w</span>as_dependency<span class="se">\w</span>as_public.jar
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a> -Dpom-File<span class="o">=</span>C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator.CE-APAC-WIND202<span class="se">\D</span>ocuments<span class="se">\w</span>ca4ej-workshop<span class="se">\m</span>odresorts-twas-j8<span class="se">\w</span>as_dependency<span class="se">\w</span>as_public-9.0.0.pom
-</code></pre></div></p>
-</div>
-</li>
-</ol>
-<hr />
-<ol start="6">
+<ol start="3">
 <li>
 <p>With the <code>was_dependency</code> folder now prepared with the necessary drivers, you are ready to <em>build</em> and <em>deploy</em> the application project into a live web application</p>
 <ul>
@@ -752,7 +677,7 @@
 </li>
 </ol>
 <hr />
-<ol start="7">
+<ol start="4">
 <li>
 <p>Within the <strong>LIBERTY DASHBOARD</strong> , a <code>modresorts</code> app will show up under the <em>Liberty Dashboard</em> panel.</p>
 <ul>
@@ -770,22 +695,22 @@
 </li>
 </ol>
 <hr />
-<ol start="8">
+<ol start="5">
 <li>
-<p>Open a new web browser tab and visit the <strong>Web application URL</strong> recorded in Step 7. Explore and familiarize yourself with the various tabs and pages built into the legacy web application.</p>
+<p>Open a new web browser tab and visit the <strong>Web application URL</strong> recorded in Step 4. Explore and familiarize yourself with the various tabs and pages built into the legacy web application.</p>
 <div class="admonition note">
 <p class="admonition-title">ERRORS AND BROKEN WEB LINKS</p>
-<p>As the legacy application has been built for WebSphere Application Server (WAS) using <code>Java 8</code>, but the deployment generated in Step 7 was intended for WebSphere Liberty using <code>Java 21</code>, there are a number of pages within the app that will produce an "Error" — for example, the location information module. These will be aspects of the application that you will remedy as part of the modernization steps that follow.</p>
+<p>As the legacy application has been built for WebSphere Application Server (WAS) using <code>Java 8</code>, but the deployment generated in Step 4 was intended for WebSphere Liberty using <code>Java 21</code>, there are a number of pages within the app that will produce an "Error" — for example, the location information module. These will be aspects of the application that you will remedy as part of the modernization steps that follow.</p>
 </div>
 <p></br>
 <a class="glightbox" href="../_attachments/appmod-8.8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/appmod-8.8.png" /></a></p>
 </li>
 </ol>
 <hr />
-<h2 id="iv-explain-the-project-code"><strong>iv. Explain the project code</strong></h2>
+<h2 id="iii-explain-the-project-code"><strong>iii. Explain the project code</strong></h2>
 <p>Let's better understand the entirety of the project by using the <strong>explainability</strong> features built into watsonx Code Assistant.</p>
 <hr />
-<ol start="9">
+<ol start="6">
 <li>
 <p>Open the <strong>Explorer</strong> tab from the left-hand interface to view the contents of the <code>modresorts-twas-j8</code> project</p>
 <ul>
@@ -803,10 +728,10 @@
 </li>
 </ol>
 <hr />
-<h2 id="v-build-a-modernization-plan"><strong>v. Build a modernization plan</strong></h2>
+<h2 id="iv-build-a-modernization-plan"><strong>iv. Build a modernization plan</strong></h2>
 <p>Before modernizing the WAS application into Liberty, you'll need to scope out the necessary changes and level of effort required to do so. To obtain that understanding, you will need to generate a modernization plan using <strong><a href="https://www.ibm.com/products/cloud-pak-for-applications/transformation-advisor" target="_blank">IBM Cloud Transformation Advisor</a></strong>. For the purposes of this lab, one such plan has been prepared ahead of time and included within the <code>modresorts-twas-j8</code> project folder.</p>
 <hr />
-<ol start="10">
+<ol start="7">
 <li>
 <p>Open the <strong>Explore</strong> tab of VS Code and right-click anywhere inside the <code>modresorts-twas-j8</code> workspace. Then hover over <strong>watsonx Code Assistant</strong> and select <strong>Modernize to Liberty</strong>.</p>
 <ul>
@@ -836,7 +761,7 @@
 </li>
 </ol>
 <hr />
-<ol start="11">
+<ol start="8">
 <li>
 <p>Analysis will take a few moments to complete. When ready, the <em>Modernize</em> panel will generate a report that identifies issues with the application that need to be fixed. Some of these can be automatically repaired, while others will require a degree of manual intervention.</p>
 <ul>
@@ -860,7 +785,7 @@
 </li>
 </ol>
 <hr />
-<ol start="12">
+<ol start="9">
 <li>
 <p>View details about the fix(es) requiring a degree of manual intervention by clicking the <strong>Assisted fixes</strong> tab.</p>
 <div class="admonition tip">
@@ -873,14 +798,14 @@
 <li><strong>Click</strong><sup>[B]</sup> the drop-down arrow to the <em>right</em> of the impacted file to reveal a detailed set of instructions for how to improve the code</li>
 <li>Afterwards, <strong>click</strong><sup>[C]</sup> the <em>name</em> of the impacted file to inspect its source code in a new editor window:</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>src/main/java/com/acme/modres/UpperServlet.java
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>src/main/java/com/acme/modres/UpperServlet.java
 </code></pre></div>
 <p></br>
 <a class="glightbox" href="../_attachments/appmod-8.12.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/appmod-8.12.png" /></a></p>
 </li>
 </ol>
 <hr />
-<ol start="13">
+<ol start="10">
 <li>
 <p>An editor window will open on the right side of VS Code, displaying the contents of <code>UpperServlet.java</code> for editing. The next set of instructions will follow along with the guidance recommended by the <em>Modernize</em> panel (in the center of the VS Code interface):</p>
 <ul>
@@ -897,61 +822,61 @@
 </li>
 </ol>
 <hr />
-<ol start="14">
+<ol start="11">
 <li>
 <p>WCA will engage a <em>Chat</em> session and generate within the conversation <strong>TWO</strong> sets of code fixes that can be added to the legacy code in order to remedy the issue.</p>
 <p></br>
 <strong>Recommendation 1:</strong> The first fix will be a <em>substitute</em> of the lines of code for <code>UpperServlet.java</code>, beginning on <em>Line 23</em> and ending on <em>Line 26</em>. A new line will also need to be added to the <code>import</code> statements at the beginning of the file.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// Assisted by watsonx Code Assistant</span><span class="w"></span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.commons.text.StringEscapeUtils</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nd">@WebServlet</span><span class="p">(</span><span class="s">&quot;/resorts/upper&quot;</span><span class="p">)</span><span class="w"></span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UpperServlet</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">HttpServlet</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">serialVersionUID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1L</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="n">response</span><span class="p">.</span><span class="na">setContentType</span><span class="p">(</span><span class="s">&quot;text/html&quot;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">originalStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;input&quot;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">originalStr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">            </span><span class="n">originalStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">escapedStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StringEscapeUtils</span><span class="p">.</span><span class="na">escapeHtml4</span><span class="p">(</span><span class="n">originalStr</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">        </span><span class="n">newStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StringEscapeUtils</span><span class="p">.</span><span class="na">escapeHtml4</span><span class="p">(</span><span class="n">newStr</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">        </span><span class="n">PrintWriter</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">getWriter</span><span class="p">();</span><span class="w"></span>
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">        </span><span class="n">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;&lt;br/&gt;&lt;b&gt;capitalized input &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">newStr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;&lt;/b&gt;&quot;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Assisted by watsonx Code Assistant</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.commons.text.StringEscapeUtils</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nd">@WebServlet</span><span class="p">(</span><span class="s">&quot;/resorts/upper&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UpperServlet</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">HttpServlet</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">serialVersionUID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1L</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="n">response</span><span class="p">.</span><span class="na">setContentType</span><span class="p">(</span><span class="s">&quot;text/html&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">originalStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;input&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">originalStr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">            </span><span class="n">originalStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">escapedStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StringEscapeUtils</span><span class="p">.</span><span class="na">escapeHtml4</span><span class="p">(</span><span class="n">originalStr</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">        </span><span class="n">newStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StringEscapeUtils</span><span class="p">.</span><span class="na">escapeHtml4</span><span class="p">(</span><span class="n">newStr</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">        </span><span class="n">PrintWriter</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">getWriter</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">        </span><span class="n">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;&lt;br/&gt;&lt;b&gt;capitalized input &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">newStr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;&lt;/b&gt;&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p></br>
 <strong>Recommendation 2:</strong> The second fix will be <em>new</em> lines of code that are to be added to the <code>pom.xml</code> file.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span><span class="w"></span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="p">.</span><span class="na">apache</span><span class="p">.</span><span class="na">commons</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span><span class="w"></span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">commons</span><span class="o">-</span><span class="n">text</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="w"></span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">1.12.0</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span><span class="w"></span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="p">.</span><span class="na">apache</span><span class="p">.</span><span class="na">commons</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">commons</span><span class="o">-</span><span class="n">text</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">1.12.0</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span><span class="w"></span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span><span class="w"></span>
 </code></pre></div>
 </li>
 </ol>
 <hr />
-<ol start="15">
+<ol start="12">
 <li>
-<p>Edit the contents of <code>UpperServlet.java</code> by <strong>replacing</strong> the highlighted lines of code as instructed in <em>Step 14</em> with the WCA-generated <strong>Recommendation 1</strong> code.</p>
+<p>Edit the contents of <code>UpperServlet.java</code> by <strong>replacing</strong> the highlighted lines of code as instructed in <em>Step 11</em> with the WCA-generated <strong>Recommendation 1</strong> code.</p>
 <p>Save the changes to the file (<strong>File</strong> &gt; <strong>Save</strong>).</p>
 </li>
 </ol>
 <hr />
-<ol start="16">
+<ol start="13">
 <li>
 <p>Locate the <code>pom.xml</code> file from the list of assets under the <strong>Explorer</strong> tab.</p>
 <ul>
 <li>Double-click on the filename to edit the contents</li>
 <li>Scroll down until you reach <strong>Level 58</strong> (<code>&lt;/dependency&gt;</code>) and place your cursor at the end of the line, then hit <span class="keys"><kbd class="key-enter">Enter</kbd></span> to create a new line</li>
-<li>Beginning on the new <strong>Line 59</strong> of the <code>pom.xml</code> contents, <strong>add</strong> the contents of WCA's <strong>Recommendation 2</strong> (the second code block of <em>Step 14</em>) to the file</li>
+<li>Beginning on the new <strong>Line 59</strong> of the <code>pom.xml</code> contents, <strong>add</strong> the contents of WCA's <strong>Recommendation 2</strong> (the second code block of <em>Step 11</em>) to the file</li>
 <li>The new lines of code should now occupy Lines 59-63 of the modified <code>pom.xml</code> code</li>
 <li>Ensure that the indentation lines up with other <code>&lt;dependency&gt;</code> declarations within the parent <code>&lt;dependencies&gt;</code> nesting</li>
 <li>Save the changes to the file (<strong>File</strong> &gt; <strong>Save</strong>)</li>
@@ -959,9 +884,9 @@
 </li>
 </ol>
 <hr />
-<ol start="17">
+<ol start="14">
 <li>
-<p>With the application code now modified— by a combination of automated fixes and manual interventions —the original deployment launched in Step 4 will need to be re-deployed.</p>
+<p>With the application code now modified— by a combination of automated fixes and manual interventions —the original deployment launched in Step 2 will need to be re-deployed.</p>
 <ul>
 <li>Return to the open VS Code <strong>Terminal</strong></li>
 <li>Press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-c">C</kbd></span> to terminate the application</li>
@@ -972,7 +897,7 @@
 </li>
 </ol>
 <hr />
-<ol start="18">
+<ol start="15">
 <li>
 <p>To re-deploy the application, return to the <strong>Modernize</strong> panel (right hand side). Take note of the fact that all <em>Issues</em> previously reported by the tool have been resolved.</p>
 <ul>
@@ -989,10 +914,10 @@
 </li>
 </ol>
 <hr />
-<h2 id="vi-java-version-upgrades"><strong>vi. Java version upgrades</strong></h2>
+<h2 id="v-java-version-upgrades"><strong>v. Java version upgrades</strong></h2>
 <p>Recall from before that the application's version of Java code was originally written for <code>Java 8</code>. However, to be compliant with modern versions of Liberty, that Java code will need to be upgraded to <code>Java 21</code>.</p>
 <hr />
-<ol start="19">
+<ol start="16">
 <li>
 <p>With the <strong>Explorer</strong> tab active, right click on the <code>modresorts-twas-j8</code> directory to expose a drop-down menu.</p>
 <ul>
@@ -1002,7 +927,7 @@
 </li>
 </ol>
 <hr />
-<ol start="20">
+<ol start="17">
 <li>
 <p>A new <em>Upgrade</em> panel will open as a tab alongside the <em>Modernize</em> panel.</p>
 <ul>
@@ -1013,7 +938,7 @@
 </li>
 </ol>
 <hr />
-<ol start="21">
+<ol start="18">
 <li>
 <p>Similar to the <em>Modernize</em> steps previously, the <em>Upgrade</em> automation will generate a new <strong>Issues</strong> tab containing a list of potential fixes required before continuing with the Java version upgrade. Some of these tasks can be handled fully by automation; others will require some degree of manual intervention.</p>
 <ul>
@@ -1025,7 +950,7 @@
 </li>
 </ol>
 <hr />
-<ol start="22">
+<ol start="19">
 <li>
 <p>To examine the <em>Upgrade</em> tasks requiring human intervention, click the <strong>Assisted fixes</strong> tab.</p>
 <ul>
@@ -1035,7 +960,7 @@
 </li>
 </ol>
 <hr />
-<ol start="23">
+<ol start="20">
 <li>
 <p>According to WCA, there is an incompatibility with the <code>getOps</code> method within the <code>DMBeanUtils.java</code> codebase — specifically with the <code>MBeanOperationInfo</code> constructor that the method calls on line 28.</p>
 <ul>
@@ -1048,11 +973,11 @@
 </li>
 </ol>
 <hr />
-<ol start="24">
+<ol start="21">
 <li>There is a second <em>optional</em> recommendation available within the <em>Issues</em> tab of the <strong>Upgrade</strong> panel, but this can be safely <strong>ignored</strong> for now as it only relates to a deprecation warning.</li>
 </ol>
 <hr />
-<ol start="25">
+<ol start="22">
 <li>
 <p>With the application's Java version now upgraded to Java 21 by a combination of automated fixes and manual interventions —the application will once again need to be redeployed to reflect the changes.</p>
 <ul>
@@ -1062,7 +987,7 @@
 </li>
 </ol>
 <hr />
-<ol start="26">
+<ol start="23">
 <li>
 <p>To re-deploy the application, return to the <strong>Upgrade</strong> panel (right hand side). Take note of the fact that all <em>Issues</em> previously reported by the tool have been resolved.</p>
 <ul>
@@ -1074,8 +999,8 @@
 </li>
 </ol>
 <hr />
-<h2 id="vii-conclusion"><strong>vii. Conclusion</strong></h2>
-<p>Having concluded the <strong>Modernizing WebSphere to Liberty</strong> hands-on modules, participants should now complete the corresponding <em>Evaluation</em> quiz and then continue with the remainder of the Level 4 curriculum.</p>
+<h2 id="vi-conclusion"><strong>vi. Conclusion</strong></h2>
+<p>Having concluded the <strong>Modernizing WebSphere to Liberty</strong> hands-on modules, those enrolled have the option to either continue to the <em>optional</em> **IBM Cloud (SaaS) Configuration chapter or to proceeed to the final evaluation test for accreditation.</p>
 
 
 
