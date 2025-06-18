@@ -785,8 +785,8 @@
 <p>For readability, <a href="https://www.ibm.com/products/websphere-application-server" target="_blank"><strong>IBM WebSphere Application Server</strong></a> (WAS) in this chapter is referred to in shorthand as "WebSphere", unless noted otherwise. Similarly, <a href="https://www.ibm.com/products/cloud-pak-for-applications/liberty" target="_blank"><strong>IBM WebSphere Liberty</strong></a> is referenced in shorthand as simply "Liberty".</p>
 </div>
 <p></br>
-The approach taken with each module of <strong>Modernizing WebSphere to Liberty</strong>,  engaging with IBM watsonx Code Assistant's (WCA) Chat functionality in the chapters ahead, is to emulate the experience of collaborating with a trusted colleague on how to best take on the modernization of WebSphere Application Server code: segmented by specific use cases, tackling particular business functions that need to be revitalized for cloud-native, and exploring precise pain points within a client's code base. The WCA Chat experience reflects how you and that trusted colleague might, together, approach a scenario like modernizing usage of Enterprise JavaBeans with WebSphere Liberty, as an example.</p>
-<p>Thinking about modernization in discrete scenarios such as these, where the aperture is narrowly focused on a specific piece of functionality or use case— rather than trying to modernize an entire, complex application stack altogether —has immense value. It is far more akin and practical to the real-world scenarios that <em>you</em> will encounter during engagements with clients: as a seller; a business partner; a trusted advisor. Entrusted with bestowing best practices for how that client can modernize specific pain points in their application code; <em>not</em> taking on the task of modernizing the <em>entirety</em> of their application stack "in one go."</p>
+The approach taken with each module of <strong>Modernizing WebSphere to Liberty</strong>,  engaging with IBM watsonx Code Assistant's (WCA) Chat functionality in the chapters ahead, is to emulate the experience of collaborating with a trusted colleague on how to best take on the modernization of WebSphere Application Server code: segmented by specific use cases, tackling particular business functions that need to be revitalized for cloud-native, and exploring precise pain points within an organizations's code base. The WCA Chat experience reflects how you and that trusted colleague might, together, approach a scenario like modernizing usage of Enterprise JavaBeans with WebSphere Liberty, as an example.</p>
+<p>Thinking about modernization in discrete scenarios such as these, where the aperture is narrowly focused on a specific piece of functionality or use case— rather than trying to modernize an entire, complex application stack altogether —has immense value. It is far more akin and practical to the real-world scenarios that <em>you</em> will encounter during engagements with other organizations or enterprises in the marketplace. Entrusted with bestowing best practices for how that organization can modernize specific pain points in their application code; <em>not</em> taking on the task of modernizing the <em>entirety</em> of their application stack "in one go."</p>
 <p>Crafting complex modernization plans for enterprise-scale applications cannot be approached as explicit "A, then B, followed by C" rulebooks or rigid decision trees. It is essential that you understand how to approach modernization as a collaborative, problem-solving oriented, question-and-answer refinement exercise. WCA Chat, which you will use to these ends in the following modules, is an ideal mechanism for refining the correct modernization approach.</p>
 <hr />
 <h2 id="appmod-1-ii-prerequisites"><strong>ii. Prerequisites</strong></h2>
@@ -1325,7 +1325,7 @@ By contrast, WCA has explicitly pulled in individual features like <code>jsp-2.3
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#appmod-2-__codelineno-11-4"></a><span class="nt">&lt;/dataSource&gt;</span>
 </code></pre></div>
 <p></br>
-WCA's recommendation utilizes an IBM Db2-specific set of JDBC drivers. For clients with a highly-regulated, Db2-heavy enterprise environment, this code recommendation has much more utility to the requirements of their business:</p>
+WCA's recommendation utilizes an IBM Db2-specific set of JDBC drivers. For organizations with a highly-regulated, Db2-heavy enterprise environment, this code recommendation has much more utility to the requirements of their business:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#appmod-2-__codelineno-12-1"></a><span class="nt">&lt;dataSource</span> <span class="na">jndiName=</span><span class="s">&quot;jdbc/LegacyDS&quot;</span> <span class="na">id=</span><span class="s">&quot;DefaultDataSource&quot;</span><span class="nt">&gt;</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#appmod-2-__codelineno-12-2"></a>    <span class="nt">&lt;jdbcDriver</span> <span class="na">libraryRef=</span><span class="s">&quot;XADatabase&quot;</span><span class="nt">/&gt;</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#appmod-2-__codelineno-12-3"></a>    <span class="nt">&lt;properties.db2.jcc</span> <span class="err">...</span> <span class="nt">/&gt;</span>
@@ -3882,24 +3882,9 @@ Once again, this recommendation has been specifically tailored for enterprise us
 <li><strong>WCA service:</strong> The back-end WCA service, to which requests from the extension are made and the results returned to the participant's IDE. It is available as software-as-a-service (SaaS) on IBM Cloud and as deployable software for on-premises deployments.</li>
 </ol>
 </div>
-<p>Participants require access to ITZ in order to reserve an environment and complete the hands-on work. If you do not yet have an account with the ITZ, you will need to <a href="https://techzone.ibm.com/" target="_blank"><strong>register for one</strong></a>.</p>
-<hr />
-<h2 id="saas-1-iii-troubleshooting-and-support"><strong>iii. Troubleshooting and support</strong></h2>
-<p>If you require assistance or run into issues with the hands-on lab, help is available.</p>
-<ul>
-<li>
-<p><strong>Environment issues:</strong> The lab environment is managed by IBM Technology Zone. <a href="https://techzone.ibm.com/help" target="_blank"><strong>Opening a support case ticket</strong></a> is recommended for issues related to the hands-on environment (provisioning, running, and so on.)</p>
-</li>
-<li>
-<p><strong>Product questions:</strong> For questions related to IBM watsonx Code Assistant capabilities, sales opportunities, roadmap, and other such matters, open a thread on the <a href="https://ibm.enterprise.slack.com/archives/C059NKPUCP9" target="_blank"><strong>#watsonx-code-assistant</strong></a> Slack channel.</p>
-</li>
-</ul>
 <hr />
 <h2 id="saas-1-iv-next-steps"><strong>iv. Next steps</strong></h2>
-<p>In the following section, participants will prepare the SaaS-based lab environment with the necessary services and configurations through IBM Technology Zone.</p></section><section class="print-page" id="saas-2"><h1 id="saas-2-2-configure-for-enterprise-java">2. Configure for enterprise Java</h1><div class="admonition quote">
-<p>The following section is partially based on IBM Cloud Documentation for <a href="https://cloud.ibm.com/docs/watsonx-code-assistant?topic=watsonx-code-assistant-cloud-setup-wca" target="_blank"><strong>Setting up your watsonx Code Assistant service in IBM Cloud</strong></a>. Some of the configuration steps— such as creation of an access group and adding an access group to the deployment space -are automatically handled by IBM Technology Zone provisioning tasks. As such, if you are repeating this deployment for a client production environment, you may wish to reference the complete documentation set.</p>
-</div>
-<h2 id="saas-2-iii-configuring-the-environment"><strong>iii. Configuring the environment</strong></h2>
+<p>In the following section, participants will prepare a SaaS-based environment with the necessary services and configurations.</p></section><section class="print-page" id="saas-2"><h1 id="saas-2-2-configure-for-enterprise-java">2. Configure for enterprise Java</h1><h2 id="iii-configuring-the-environment"><strong>iii. Configuring the environment</strong></h2>
 <p>A new tab will load to present the <strong>WCA Dashboard</strong>, which for a first-time login will automatically prompt you to configure the environment.</p>
 <hr />
 <ol start="12">
@@ -4339,12 +4324,6 @@ Once again, this recommendation has been specifically tailored for enterprise us
 <h2 id="saas-3-i-objectives-and-rationale"><strong>i. Objectives and rationale</strong></h2>
 <p>With the IBM watsonx Code Assistant (WCA) service component of the Software-as-a-Service (SaaS) architecture now successfully provisioned via the IBM Technology Zone (ITZ), participants will now need to set up the WCA extension within an integrated development environment (IDE). WCA currently supports both <em>Visual Studio Code</em> (<strong>VS Code</strong>) and <em>Eclipse IDE</em>.</p>
 <p>This module guides participants through the process of installing VS Code on their local machine. Afterwards, the WCA extension ("plug-in") can then be easily integrated with the IDE and authorized for use with the ITZ-provisioned WCA service.</p>
-<div class="admonition note">
-<p class="admonition-title">WHY INSTALL LOCALLY?</p>
-<p>Be aware that ITZ only allows two environments to be reserved for education and training purposes at any one time. Reservations for client demonstrations and pilots do not count against this limit.</p>
-<p>The WCA Standard plan on SaaS (this module) requires at least one reservation slot. The on-premises environment already provisioned through ITZ for the previous <a href="https://ibm.github.io/wca-l4/on-premises/1/" target="_blank"><strong>On-Premises Installation and Deployment</strong></a> modules is occupying the second available slot. Provisioning an ITZ-hosted virtual machine (VM) environment will require a third slot — exceeding what ITZ supports. Therefore, to accommodate a virtualized desktop, participants would <strong>need to retire and deprovision</strong> the on-premises environment that they've already gone to great lengths to set up. Let's avoid that scenario, if possible.</p>
-<p>IBM watsonx Code Assistant works great on locally-installed IDEs via extensions (or plug-ins) built into VS Code and Eclipse IDE, respectively. In fact, it's the <em>de facto</em> way to interact with the service and provides the best impression for users — with a less cumbersome experience executing the lab guide instructions and much more responsive IDE interactions.</p>
-</div>
 <hr />
 <h2 id="saas-3-ii-locally-install-vs-code"><strong>ii. Locally install VS Code</strong></h2>
 <p>Before you configure the extension for VS Code, you must first install the application on your machine.</p>
@@ -4438,12 +4417,6 @@ Once again, this recommendation has been specifically tailored for enterprise us
 <h2 id="saas-4-i-objectives-and-rationale"><strong>i. Objectives and rationale</strong></h2>
 <p>With the IBM watsonx Code Assistant (WCA) service component of the Software-as-a-Service (SaaS) architecture now successfully provisioned via the IBM Technology Zone (ITZ), participants will now need to set up the WCA extension within an integrated development environment (IDE). WCA currently supports both <em>Visual Studio Code</em> (<strong>VS Code</strong>) and <em>Eclipse IDE</em>.</p>
 <p>This module guides participants through the process of installing <strong>Eclipse IDE</strong> on their local machine. Afterwards, the WCA extension ("plug-in") can then be easily integrated with the IDE and authorized for use with the ITZ-provisioned WCA service.</p>
-<div class="admonition note">
-<p class="admonition-title">WHY INSTALL LOCALLY?</p>
-<p>Be aware that ITZ only allows two environments to be reserved for education and training purposes at any one time. Reservations for client demonstrations and pilots do not count against this limit.</p>
-<p>The WCA Standard plan on SaaS requires at least one reservation slot. The on-premises environment already provisioned through ITZ for the previous <a href="https://ibm.github.io/wca-l4/on-premises/1/" target="_blank"><strong>On-Premises Installation and Deployment</strong></a> modules is occupying the second available slot. Provisioning an ITZ-hosted virtual machine (VM) environment will require a third slot — exceeding what ITZ supports. Therefore, to accommodate a virtualized desktop, participants would <strong>need to retire and deprovision</strong> the on-premises environment that they've already gone to great lengths to set up. Let's avoid that scenario, if possible.</p>
-<p>IBM watsonx Code Assistant works great on locally-installed IDEs via extensions built into VS Code and Eclipse IDE. In fact, it's the <em>de facto</em> way to interact with the service and provides the best impression for users by far — with a less cumbersome experience with the lab guide instructions and much more responsive IDE interactions.</p>
-</div>
 <hr />
 <h2 id="saas-4-ii-locally-install-eclipse-ide"><strong>ii. Locally install Eclipse IDE</strong></h2>
 <p>With the IBM Cloud credentials set up, the next step will be to install the Eclipse IDE locally and then integrate it with the WCA service via the IDE plug-in.</p>
