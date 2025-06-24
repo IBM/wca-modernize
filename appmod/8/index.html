@@ -649,7 +649,7 @@
 </code></pre></div>
 <details class="note">
 <summary>OPTIONAL: DOWNLOAD THE LAB ASSETS</summary>
-<p>The assets embedded within the lab virtual machine can be retrieved from the following repository:
+<p>Assets embedded within the lab virtual machine can be retrieved from the following repository.
 </br>
 <strong>URL: <a href="https://ibm.box.com/s/ps65ax6mupmwx3pww2b2ylvc9ed18njp">https://ibm.box.com/s/ps65ax6mupmwx3pww2b2ylvc9ed18njp</a></strong></p>
 </details>
@@ -659,14 +659,13 @@
 <ol start="2">
 <li>
 <p>Open a <strong>Terminal</strong> within VS Code by clicking <strong>Terminal</strong> &gt; <strong>New Terminal</strong> (from the top taskbar) or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-shift">Shift</kbd></span> + <span class="keys"><kbd class="key-tilde">~</kbd></span> to open a console along the bottom of VS Code.</p>
-<ul>
-<li>Confirm the console is open to the correct directory (<code>/modresorts-twas-j8/</code> specifically) by executing the following command within the Terminal window:
+<p></br>
+- Confirm the console is open to the correct directory (<code>/modresorts-twas-j8/</code> specifically) by executing the following command within the Terminal window:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span> ~/Documents/wca-assets-2025/1-java-modernization/modresorts-twas-j8/
-</code></pre></div></li>
-<li>Ensure the console is sourcing the correct <code>PATH</code> and <code>JAVA_HOME</code> environment variables by executing the following command within the Terminal window:
+</code></pre></div>
+- Ensure the console is sourcing the correct <code>PATH</code> and <code>JAVA_HOME</code> environment variables by executing the following command within the Terminal window:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">source</span> ~/.zshrc
-</code></pre></div></li>
-</ul>
+</code></pre></div></p>
 </li>
 </ol>
 <hr />
@@ -674,7 +673,7 @@
 <li>
 <p><strong>Maven</strong>, one of the several dependencies already pre-installed as part of the lab's virtualized environment, is a project management and build automation tool for Java-based applications. Before the WebSphere Application Server (WAS) application (<code>modresorts</code>) can be deployed, some additional steps must be undertaken to configure the Maven project. To do so, participants will need to finalize a <code>pom.xml</code> file (Project Object Model), compile the code, and deploy the build into a locally-hosted web application.</p>
 <p></br>
-To produce the <code>target/modresorts-2.0.0.war</code> application build, as well as the necessary <code>pom.xml</code> file, execute the following instruction within the Terminal console:</p>
+To produce the <code>target/modresorts-2.0.0.war</code> application build, as well as the necessary <code>pom.xml</code> file, <strong>execute</strong> the following instruction within the Terminal console:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mvn clean package -DskipTests
 </code></pre></div>
 <p></br></p>
@@ -699,7 +698,8 @@ To produce the <code>target/modresorts-2.0.0.war</code> application build, as we
 <ol start="4">
 <li>
 <p>With the <code>was_dependency</code> folder now prepared with the necessary drivers, the <code>modresorts</code> application is ready to <em>build</em> and <em>deploy</em> into a a live WebSphere Application Server-hosted website.</p>
-<p>Execute the following instruction set within the Terminal console:
+<p></br>
+- <strong>Execute</strong> the following instruction set within the Terminal console:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mvn -f ~/Documents/wca-assets-2025/1-java-modernization/modresorts-twas-j8/pom.xml liberty:run -DcompileDependencies<span class="o">=</span><span class="nb">false</span> -DrecompileDependencies<span class="o">=</span><span class="nb">false</span>
 </code></pre></div></p>
 <ul>

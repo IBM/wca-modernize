@@ -1134,11 +1134,71 @@ The approach taken with each module of <strong>Modernizing WebSphere to Liberty<
 </li>
 </ol>
 <hr />
-<h2 id="appmod-1-viii-activate-the-vs-code-extension"><strong>viii. Activate the VS Code extension</strong></h2>
-<p>Finally, the API key must be added to the virtual machine (VM) lab environment that was provisioned as part of this course. The VM has been prepared ahead of time with Visual Studio (VS) Code, the necessary enterprise Java drivers, and pre-populated data sets required to run the lab.</p>
-<p>At this stage, participants need only log in using the API key created earlier (Step 20) to authorize the VS Code extension for use with WCA. The VS Code extension supports all the features of the Essentials plan, plus enterprise Java modernization capabilities, enhanced code explanation, and enhanced unit test generation.</p>
+<h2 id="appmod-1-viii-accessing-and-using-the-virtual-machine"><strong>viii. Accessing and using the virtual machine</strong></h2>
+<p>Before getting started with WCA, you will first setup Visual Studio Code (commonly referred to as VS Code) within the lab's virtualized machine (VM). This will provide an integrated development environment for experimenting with WCA's generative AI capabilities.</p>
 <hr />
 <ol start="27">
+<li>
+<p>From the <code>learn.ibm.com</code> course page, navigate to the <strong>Lab Environment</strong> section and launch the <code>IBM SPVC Labs: W7S220G</code> VM environment.</p>
+<ul>
+<li>Provisioning typically takes about 90 minutes or less</li>
+<li>Periodically refresh this page and click the <strong>Direct Environment Access</strong><sup>[A]</sup> button to test if the VM is available</li>
+<li>When the page displays a <strong>Red Hat</strong> VM box, the environment is ready for access</li>
+<li>Click the VM box<sup>[B]</sup> to launch the hands-on environment</li>
+</ul>
+<p></br>
+<a class="glightbox" href="../appmod/_attachments/appmod-8.15.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../appmod/_attachments/appmod-8.15.png" /></a></p>
+<p></br>
+<a class="glightbox" href="../appmod/_attachments/appmod-8.16.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../appmod/_attachments/appmod-8.16.png" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="28">
+<li>
+<p>Select the <code>techzone</code><sup>[A]</sup> login when prompted.</p>
+<ul>
+<li>Enter the following for the password:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#appmod-1-__codelineno-0-1"></a>IBMDem0s!
+</code></pre></div></li>
+<li>Press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to complete the VM login</li>
+</ul>
+<p></br>
+<a class="glightbox" href="../appmod/_attachments/appmod-8.17.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../appmod/_attachments/appmod-8.17.png" /></a></p>
+</li>
+</ol>
+<hr />
+<ol start="29">
+<li>
+<p>Once you have successfully authenticated, click the <strong>Activities</strong><sup>[A]</sup> button in the top-left corner of the interface to pull open the list of available applications from the bottom of the screen.</p>
+<ul>
+<li>Click the <strong>Visual Studio Code</strong><sup>[B]</sup> application shortcut at the bottom of the desktop to start up the service.</li>
+<li>You may access the web browser at any time by clicking the <strong>Activities</strong><sup>[A]</sup> button and then launching <strong>Firefox</strong><sup>[C]</sup>, as shown.</li>
+</ul>
+<p></br>
+<a class="glightbox" href="../appmod/_attachments/appmod-8.18.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../appmod/_attachments/appmod-8.18.png" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">COPY AND PASTE INSTRUCTIONS INTO THE VIRTUAL MACHINE</p>
+<p>As you are running the lab environment inside a VM, it is not possible to "paste" lab instructions or information from your local machine's clipboard directly into the VM. Instead, you may use the <strong>Send Text</strong> feature located in the top-center of the VM interface.</p>
+<ul>
+<li>Place your cursor within the VM where you wish to paste instructions or text from the clipboard</li>
+<li>Click the <strong>Send Text</strong> icon<sup>[A]</sup> to open a pop-up window.</li>
+<li>Paste your local machine's clipboard contents into the input field<sup>[B]</sup></li>
+<li>Click the <strong>Send Text</strong> button<sup>[C]</sup> to the right of the input field to "paste" the contents into the VM</li>
+<li>Click the X icon<sup>[D]</sup> to close the pop-up window</li>
+</ul>
+<p></br>
+<a class="glightbox" href="../appmod/_attachments/appmod-8.19.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../appmod/_attachments/appmod-8.19.png" /></a></p>
+<p></br>
+<a class="glightbox" href="../appmod/_attachments/appmod-8.20.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../appmod/_attachments/appmod-8.20.png" /></a></p>
+</div>
+</li>
+</ol>
+<hr />
+<h2 id="appmod-1-ix-activate-the-vs-code-extension"><strong>ix. Activate the VS Code extension</strong></h2>
+<p>Finally, the API key must be added to the VM lab environment that was provisioned as part of this course. The VM has been prepared ahead of time with Visual Studio (VS) Code, the necessary enterprise Java drivers, and pre-populated data sets required to run the lab.</p>
+<p>At this stage, participants need only log in using the API key created earlier (Step 20) to authorize the VS Code extension for use with WCA. The VS Code extension supports all the features of the Essentials plan, plus enterprise Java modernization capabilities, enhanced code explanation, and enhanced unit test generation.</p>
+<hr />
+<ol start="30">
 <li>
 <p>To engage WCA within VS Code, click on the <strong>watsonx Code Assistant</strong><sup>[A]</sup> icon from the left-hand side of VS Code interface. You will be greeted with a <code>Welcome, let's get started!</code> prompt within the IDE.</p>
 <p></br>
@@ -1146,7 +1206,7 @@ The approach taken with each module of <strong>Modernizing WebSphere to Liberty<
 </li>
 </ol>
 <hr />
-<ol start="28">
+<ol start="31">
 <li>
 <p>Now let's authorize the extension for use with the WCA service provisioned on IBM Cloud. From the WCA panel, click <strong>Log in with your API key</strong><sup>[A]</sup> to continue.</p>
 <p></br>
@@ -1154,7 +1214,7 @@ The approach taken with each module of <strong>Modernizing WebSphere to Liberty<
 </li>
 </ol>
 <hr />
-<ol start="29">
+<ol start="32">
 <li>
 <p>A drop-down menu will open at the top of the VS Code interface. <strong>Copy and paste</strong><sup>[A]</sup> the <em>WCA API Key</em> that was recorded in <strong>Step 20</strong> into the prompt.</p>
 <ul>
@@ -1169,16 +1229,16 @@ The approach taken with each module of <strong>Modernizing WebSphere to Liberty<
 </li>
 </ol>
 <hr />
-<ol start="30">
+<ol start="33">
 <li>
-<p>Confirm that the extension successfully authenticated with the WCA service by looking for an open <em>Chat session 1</em> with <code>watsonx</code> along the left side of the WCA Extension tab<sup>[A]</sup>. If this Chat interface is available and operational, that confirms that VS Code extension has been successfully integrated with the WCA service.</p>
+<p>Confirm that the extension successfully authenticated with the WCA service by looking for an open <em>Chat session 1</em> with <code>watsonx</code> along the left side of the <strong>WCA Extension</strong> tab<sup>[A]</sup>. If this Chat interface is available and operational, that confirms that VS Code extension has been successfully integrated with the WCA service.</p>
 <p></br>
 <a class="glightbox" href="../appmod/_attachments/saas-3.7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../appmod/_attachments/saas-3.7.png" /></a></p>
 <p>At this stage, the WCA Standard Plan extension for VS Code has been successfully installed and configured.</p>
 </li>
 </ol>
 <hr />
-<h2 id="appmod-1-ix-next-steps"><strong>ix. Next steps</strong></h2>
+<h2 id="appmod-1-x-next-steps"><strong>x. Next steps</strong></h2>
 <p>In the following section, participants will explore fundamental modernization and migration techniques using legacy <em>WebSphere Enterprise Archive</em> (<em>EAR</em>) configuration code — ultimately producing a modernized <em>Liberty Web Archive</em> (<em>WAR</em>) configuration codebase.</p></section><section class="print-page" id="appmod-2"><h1 id="appmod-2-basic-migration-capabilitiesmodernizing-websphere-to-liberty"><strong>Basic migration capabilities</strong></br><em>Modernizing WebSphere to Liberty</em></h1>
 <h2 id="appmod-2-i-incentives-to-modernize"><strong>i. Incentives to modernize</strong></h2>
 <div class="admonition quote">
@@ -3758,7 +3818,7 @@ Once again, this recommendation has been specifically tailored for enterprise us
 </code></pre></div>
 <details class="note">
 <summary>OPTIONAL: DOWNLOAD THE LAB ASSETS</summary>
-<p>The assets embedded within the lab virtual machine can be retrieved from the following repository:
+<p>Assets embedded within the lab virtual machine can be retrieved from the following repository.
 </br>
 <strong>URL: <a href="https://ibm.box.com/s/ps65ax6mupmwx3pww2b2ylvc9ed18njp">https://ibm.box.com/s/ps65ax6mupmwx3pww2b2ylvc9ed18njp</a></strong></p>
 </details>
@@ -3768,14 +3828,13 @@ Once again, this recommendation has been specifically tailored for enterprise us
 <ol start="2">
 <li>
 <p>Open a <strong>Terminal</strong> within VS Code by clicking <strong>Terminal</strong> &gt; <strong>New Terminal</strong> (from the top taskbar) or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-shift">Shift</kbd></span> + <span class="keys"><kbd class="key-tilde">~</kbd></span> to open a console along the bottom of VS Code.</p>
-<ul>
-<li>Confirm the console is open to the correct directory (<code>/modresorts-twas-j8/</code> specifically) by executing the following command within the Terminal window:
+<p></br>
+- Confirm the console is open to the correct directory (<code>/modresorts-twas-j8/</code> specifically) by executing the following command within the Terminal window:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#appmod-8-__codelineno-1-1"></a><span class="nb">cd</span> ~/Documents/wca-assets-2025/1-java-modernization/modresorts-twas-j8/
-</code></pre></div></li>
-<li>Ensure the console is sourcing the correct <code>PATH</code> and <code>JAVA_HOME</code> environment variables by executing the following command within the Terminal window:
+</code></pre></div>
+- Ensure the console is sourcing the correct <code>PATH</code> and <code>JAVA_HOME</code> environment variables by executing the following command within the Terminal window:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#appmod-8-__codelineno-2-1"></a><span class="nb">source</span> ~/.zshrc
-</code></pre></div></li>
-</ul>
+</code></pre></div></p>
 </li>
 </ol>
 <hr />
@@ -3783,7 +3842,7 @@ Once again, this recommendation has been specifically tailored for enterprise us
 <li>
 <p><strong>Maven</strong>, one of the several dependencies already pre-installed as part of the lab's virtualized environment, is a project management and build automation tool for Java-based applications. Before the WebSphere Application Server (WAS) application (<code>modresorts</code>) can be deployed, some additional steps must be undertaken to configure the Maven project. To do so, participants will need to finalize a <code>pom.xml</code> file (Project Object Model), compile the code, and deploy the build into a locally-hosted web application.</p>
 <p></br>
-To produce the <code>target/modresorts-2.0.0.war</code> application build, as well as the necessary <code>pom.xml</code> file, execute the following instruction within the Terminal console:</p>
+To produce the <code>target/modresorts-2.0.0.war</code> application build, as well as the necessary <code>pom.xml</code> file, <strong>execute</strong> the following instruction within the Terminal console:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#appmod-8-__codelineno-3-1"></a>mvn clean package -DskipTests
 </code></pre></div>
 <p></br></p>
@@ -3808,7 +3867,8 @@ To produce the <code>target/modresorts-2.0.0.war</code> application build, as we
 <ol start="4">
 <li>
 <p>With the <code>was_dependency</code> folder now prepared with the necessary drivers, the <code>modresorts</code> application is ready to <em>build</em> and <em>deploy</em> into a a live WebSphere Application Server-hosted website.</p>
-<p>Execute the following instruction set within the Terminal console:
+<p></br>
+- <strong>Execute</strong> the following instruction set within the Terminal console:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#appmod-8-__codelineno-4-1"></a>mvn -f ~/Documents/wca-assets-2025/1-java-modernization/modresorts-twas-j8/pom.xml liberty:run -DcompileDependencies<span class="o">=</span><span class="nb">false</span> -DrecompileDependencies<span class="o">=</span><span class="nb">false</span>
 </code></pre></div></p>
 <ul>
