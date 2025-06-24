@@ -652,13 +652,12 @@
 <hr />
 <ol start="2">
 <li>
-<p>Open a <strong>Terminal</strong> within VS Code by clicking <strong>Terminal</strong> &gt; <strong>New Terminal</strong> from the top taskbar — or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-shift">Shift</kbd></span> + <span class="keys"><kbd class="key-tilde">~</kbd></span> — which will open a console along the bottom of the VS Code window.</p>
+<p>Open a <strong>Terminal</strong> within VS Code by clicking <strong>Terminal</strong> &gt; <strong>New Terminal</strong> (from the top taskbar) or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-shift">Shift</kbd></span> + <span class="keys"><kbd class="key-tilde">~</kbd></span> to open a console along the bottom of the VS Code window.</p>
 <ul>
-<li>Confirm the console is open to the correct directory (<code>/modresorts-twas-j8/</code>, specifically) by executing the following command within the Terminal window:
+<li>Confirm the console is open to the correct directory (<code>/modresorts-twas-j8/</code> specifically) by executing the following command within the Terminal window:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span> ~/Documents/wca-assets-2025/1-java-modernization/modresorts-twas-j8/
 </code></pre></div></li>
-<li>Ensure the console is sourcing the correct <code>PATH</code> and <code>JAVA_HOME</code> environment settings by executing the following command within the Terminal window:</li>
-<li>Source the <code>~/.zshrc</code> <em>PATH</em> and <em>JAVA_HOME</em> variables by executing the following:
+<li>Ensure the console is sourcing the correct <code>PATH</code> and <code>JAVA_HOME</code> environment variables by executing the following command within the Terminal window:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">source</span> ~/.zshrc
 </code></pre></div></li>
 </ul>
@@ -667,23 +666,34 @@
 <hr />
 <ol start="3">
 <li>
-<p>With the <code>was_dependency</code> folder now prepared with the necessary drivers, you are ready to <em>build</em> and <em>deploy</em> the application project into a live web application</p>
+<p><strong>Maven</strong>, one of the several dependencies already pre-installed as part of the lab's virtualized environment, is a project management and build automation tool for Java-based applications. Before the WebSphere Application Server (WAS) application (<code>modresorts</code>) can be deployed, some additional steps must be undertaken to configure the Maven project. To do so, participants will need to finalize a <code>pom.xml</code> file (Project Object Model), compile the code, and deploy the build into a locally-hosted web application.</p>
+<p>To produce the <code>target/modresorts-2.0.0.war</code> application build, as well as the necessary <code>pom.xml</code> file, execute the following instruction within the Terminal console:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mvn clean package -DskipTests
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">PROGRAMMATIC vs. GRAPHICAL USER INTERFACE</p>
+<p>Be aware that the instructions in Step 3 and 4 are a programmatic (console-driven) approach to building and deploying the Maven <code>modresorts</code> application. Alternatively, the same procedure can be conducted using Visual Studio Code's graphical user interface. Expand the tab below for more details on how to reproduce this work graphically.</p>
+<details class="quote">
+<summary>OPTIONAL: DEPLOY VIA GRAPHICAL USER INTERFACE</summary>
 <ul>
 <li>Open the <strong>Explorer</strong> tab from the left-hand side of the VS Code interface</li>
 <li>Below the list of assets belonging the <code>modresorts-twas-j8</code> directory, locate and toggle the <strong>LIBERTY DASHBOARD</strong><sup>[A]</sup> drop-down panel amongst the tabs</li>
-<li>If <code>modresorts</code> is not displayed, click the <strong>Add project to Liberty Dashboard</strong><sup>[B]</sup> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> when prompted to select the <code>modresorts-twas-j8</code> project<sup>[C]</sup></li>
+<li>If <code>modresorts</code> is not displayed, click the <strong>Add project to Liberty Dashboard</strong><sup>[B]</sup> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> when prompted to select the <code>modresorts-twas-j8</code> project<sup>[C]</sup>
+</br>
+<a class="glightbox" href="../_attachments/appmod-8.6a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/appmod-8.6a.png" /></a></li>
 </ul>
-<p></br>
-<a class="glightbox" href="../_attachments/appmod-8.6a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/appmod-8.6a.png" /></a></p>
+</details>
+</div>
 </li>
 </ol>
 <hr />
 <ol start="4">
 <li>
-<p>Within the <strong>LIBERTY DASHBOARD</strong> , a <code>modresorts</code> app will show up under the <em>Liberty Dashboard</em> panel.</p>
+<p>With the <code>was_dependency</code> folder now prepared with the necessary drivers, the <code>modresorts</code> application is ready to <em>build</em> and <em>deploy</em> into a a live WebSphere Application Server-hosted website.</p>
+<p>Execute the following instruction set within the Terminal console:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mvn -f ~/Documents/wca-assets-2025/1-java-modernization/modresorts-twas-j8/pom.xml liberty:run -DcompileDependencies<span class="o">=</span><span class="nb">false</span> -DrecompileDependencies<span class="o">=</span><span class="nb">false</span>
+</code></pre></div></p>
 <ul>
-<li>Right click on the <code>modresorts</code> project name to open the drop-down menu of options</li>
-<li>Click <strong>Start</strong> to initialize the project</li>
 <li>VS Code will automatically download the necessary packages (you can trace the progress within the Terminal console)</li>
 <li><strong>Wait</strong> until the initialization process has finished and the console has returned a <code>Source compilation was successful</code> message</li>
 <li><strong>Copy</strong> and record the <em>Web application available (default host): ...</em> address returned by the Terminal console (<code>http://localhost:9080/resorts</code> or similar)</li>
@@ -799,7 +809,7 @@
 <li><strong>Click</strong><sup>[B]</sup> the drop-down arrow to the <em>right</em> of the impacted file to reveal a detailed set of instructions for how to improve the code</li>
 <li>Afterwards, <strong>click</strong><sup>[C]</sup> the <em>name</em> of the impacted file to inspect its source code in a new editor window:</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>src/main/java/com/acme/modres/UpperServlet.java
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>src/main/java/com/acme/modres/UpperServlet.java
 </code></pre></div>
 <p></br>
 <a class="glightbox" href="../_attachments/appmod-8.12.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../_attachments/appmod-8.12.png" /></a></p>
@@ -828,38 +838,38 @@
 <p>WCA will engage a <em>Chat</em> session and generate within the conversation <strong>TWO</strong> sets of code fixes that can be added to the legacy code in order to remedy the issue.</p>
 <p></br>
 <strong>Recommendation 1:</strong> The first fix will be a <em>substitute</em> of the lines of code for <code>UpperServlet.java</code>, beginning on <em>Line 23</em> and ending on <em>Line 26</em>. A new line will also need to be added to the <code>import</code> statements at the beginning of the file.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Assisted by watsonx Code Assistant</span><span class="w"></span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.commons.text.StringEscapeUtils</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nd">@WebServlet</span><span class="p">(</span><span class="s">&quot;/resorts/upper&quot;</span><span class="p">)</span><span class="w"></span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UpperServlet</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">HttpServlet</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">serialVersionUID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1L</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="n">response</span><span class="p">.</span><span class="na">setContentType</span><span class="p">(</span><span class="s">&quot;text/html&quot;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">originalStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;input&quot;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">originalStr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">            </span><span class="n">originalStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span><span class="w"></span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">escapedStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StringEscapeUtils</span><span class="p">.</span><span class="na">escapeHtml4</span><span class="p">(</span><span class="n">originalStr</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">        </span><span class="n">newStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StringEscapeUtils</span><span class="p">.</span><span class="na">escapeHtml4</span><span class="p">(</span><span class="n">newStr</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">        </span><span class="n">PrintWriter</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">getWriter</span><span class="p">();</span><span class="w"></span>
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">        </span><span class="n">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;&lt;br/&gt;&lt;b&gt;capitalized input &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">newStr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;&lt;/b&gt;&quot;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// Assisted by watsonx Code Assistant</span><span class="w"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">org.apache.commons.text.StringEscapeUtils</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nd">@WebServlet</span><span class="p">(</span><span class="s">&quot;/resorts/upper&quot;</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UpperServlet</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">HttpServlet</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">serialVersionUID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1L</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">        </span><span class="n">response</span><span class="p">.</span><span class="na">setContentType</span><span class="p">(</span><span class="s">&quot;text/html&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">originalStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;input&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">originalStr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">            </span><span class="n">originalStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">escapedStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StringEscapeUtils</span><span class="p">.</span><span class="na">escapeHtml4</span><span class="p">(</span><span class="n">originalStr</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">        </span><span class="n">newStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StringEscapeUtils</span><span class="p">.</span><span class="na">escapeHtml4</span><span class="p">(</span><span class="n">newStr</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">        </span><span class="n">PrintWriter</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">getWriter</span><span class="p">();</span><span class="w"></span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">        </span><span class="n">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;&lt;br/&gt;&lt;b&gt;capitalized input &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">newStr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;&lt;/b&gt;&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p></br>
 <strong>Recommendation 2:</strong> The second fix will be <em>new</em> lines of code that are to be added to the <code>pom.xml</code> file.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span><span class="w"></span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="p">.</span><span class="na">apache</span><span class="p">.</span><span class="na">commons</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span><span class="w"></span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">commons</span><span class="o">-</span><span class="n">text</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="w"></span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">1.12.0</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span><span class="w"></span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">org</span><span class="p">.</span><span class="na">apache</span><span class="p">.</span><span class="na">commons</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">commons</span><span class="o">-</span><span class="n">text</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">1.12.0</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span><span class="w"></span>
 </code></pre></div>
 </li>
 </ol>
