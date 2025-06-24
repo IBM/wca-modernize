@@ -3758,17 +3758,16 @@ Once again, this recommendation has been specifically tailored for enterprise us
 </code></pre></div>
 <details class="note">
 <summary>OPTIONAL: DOWNLOAD THE LAB ASSETS</summary>
-<p>The assets embedded within the lab virtual machine can be retrieved from the following repository:</p>
-<div class="admonition warning">
-<p><strong>URL: <a href="https://ibm.box.com/s/ps65ax6mupmwx3pww2b2ylvc9ed18njp">https://ibm.box.com/s/ps65ax6mupmwx3pww2b2ylvc9ed18njp</a></strong></p>
-</div>
+<p>The assets embedded within the lab virtual machine can be retrieved from the following repository:
+</br>
+<strong>URL: <a href="https://ibm.box.com/s/ps65ax6mupmwx3pww2b2ylvc9ed18njp">https://ibm.box.com/s/ps65ax6mupmwx3pww2b2ylvc9ed18njp</a></strong></p>
 </details>
 </li>
 </ol>
 <hr />
 <ol start="2">
 <li>
-<p>Open a <strong>Terminal</strong> within VS Code by clicking <strong>Terminal</strong> &gt; <strong>New Terminal</strong> (from the top taskbar) or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-shift">Shift</kbd></span> + <span class="keys"><kbd class="key-tilde">~</kbd></span> to open a console along the bottom of the VS Code window.</p>
+<p>Open a <strong>Terminal</strong> within VS Code by clicking <strong>Terminal</strong> &gt; <strong>New Terminal</strong> (from the top taskbar) or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-shift">Shift</kbd></span> + <span class="keys"><kbd class="key-tilde">~</kbd></span> to open a console along the bottom of VS Code.</p>
 <ul>
 <li>Confirm the console is open to the correct directory (<code>/modresorts-twas-j8/</code> specifically) by executing the following command within the Terminal window:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#appmod-8-__codelineno-1-1"></a><span class="nb">cd</span> ~/Documents/wca-assets-2025/1-java-modernization/modresorts-twas-j8/
@@ -3783,14 +3782,14 @@ Once again, this recommendation has been specifically tailored for enterprise us
 <ol start="3">
 <li>
 <p><strong>Maven</strong>, one of the several dependencies already pre-installed as part of the lab's virtualized environment, is a project management and build automation tool for Java-based applications. Before the WebSphere Application Server (WAS) application (<code>modresorts</code>) can be deployed, some additional steps must be undertaken to configure the Maven project. To do so, participants will need to finalize a <code>pom.xml</code> file (Project Object Model), compile the code, and deploy the build into a locally-hosted web application.</p>
-<p>To produce the <code>target/modresorts-2.0.0.war</code> application build, as well as the necessary <code>pom.xml</code> file, execute the following instruction within the Terminal console:</p>
+<p></br>
+To produce the <code>target/modresorts-2.0.0.war</code> application build, as well as the necessary <code>pom.xml</code> file, execute the following instruction within the Terminal console:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#appmod-8-__codelineno-3-1"></a>mvn clean package -DskipTests
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">PROGRAMMATIC vs. GRAPHICAL USER INTERFACE</p>
+<p></br></p>
+<details class="note">
+<summary>OPTIONAL: DEPLOYING VIA PROGRAMMATIC vs. GRAPHICAL USER INTERFACE</summary>
 <p>Be aware that the instructions in Step 3 and 4 are a programmatic (console-driven) approach to building and deploying the Maven <code>modresorts</code> application. Alternatively, the same procedure can be conducted using Visual Studio Code's graphical user interface (GUI). Expand the tab below for details on how to perform this using the GUI.</p>
-<details class="quote">
-<summary>OPTIONAL: DEPLOY VIA GRAPHICAL USER INTERFACE</summary>
 <ul>
 <li>Open the <strong>Explorer</strong> tab from the left-hand side of the VS Code interface</li>
 <li>Below the list of assets belonging the <code>modresorts-twas-j8</code> directory, locate and toggle the <strong>LIBERTY DASHBOARD</strong><sup>[A]</sup> drop-down panel amongst the tabs</li>
@@ -3803,7 +3802,6 @@ Once again, this recommendation has been specifically tailored for enterprise us
 <a class="glightbox" href="../appmod/_attachments/appmod-8.7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../appmod/_attachments/appmod-8.7.png" /></a></li>
 </ul>
 </details>
-</div>
 </li>
 </ol>
 <hr />
