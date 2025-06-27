@@ -3845,7 +3845,6 @@ Once again, this recommendation has been specifically tailored for enterprise us
 To produce the <code>target/modresorts-2.0.0.war</code> application build, as well as the necessary <code>pom.xml</code> file, <strong>execute</strong> the following instruction within the Terminal console:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#appmod-8-__codelineno-3-1"></a>mvn clean package -DskipTests
 </code></pre></div>
-<p></br></p>
 <details class="note">
 <summary>OPTIONAL: DEPLOYING VIA PROGRAMMATIC vs. GRAPHICAL USER INTERFACE</summary>
 <p>Be aware that the instructions in Step 3 and 4 are a programmatic (console-driven) approach to building and deploying the Maven <code>modresorts</code> application. Alternatively, the same procedure can be conducted using Visual Studio Code's graphical user interface (GUI). Expand the tab below for details on how to perform this using the GUI.</p>
@@ -3866,13 +3865,17 @@ To produce the <code>target/modresorts-2.0.0.war</code> application build, as we
 <hr />
 <ol start="4">
 <li>
-<p>With the <code>was_dependency</code> folder now prepared with the necessary drivers, the <code>modresorts</code> application is ready to <em>build</em> and <em>deploy</em> into a a live WebSphere Application Server-hosted website.</p>
-<p></br>
-- <strong>Execute</strong> the following instruction set within the Terminal console:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#appmod-8-__codelineno-4-1"></a>mvn -f ~/Documents/wca-assets-2025/1-java-modernization/modresorts-twas-j8/pom.xml liberty:run -DcompileDependencies<span class="o">=</span><span class="nb">false</span> -DrecompileDependencies<span class="o">=</span><span class="nb">false</span>
-</code></pre></div></p>
+<p>With the <code>was_dependency</code> folder now prepared with the necessary drivers, the <code>modresorts</code> application is ready to <em>build</em> and <em>deploy</em> a live WebSphere Application Server-hosted site.</p>
 <ul>
-<li>VS Code will automatically download the necessary packages (you can trace the progress within the Terminal console)</li>
+<li>
+<p><strong>Execute</strong> the following instruction set within the Terminal console:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#appmod-8-__codelineno-4-1"></a>mvn -f ~/Documents/wca-assets-2025/1-java-modernization/modresorts-twas-j8/pom.xml liberty:run -DcompileDependencies<span class="o">=</span><span class="nb">false</span> -DrecompileDependencies<span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+</br></p>
+</li>
+<li>
+<p>VS Code will automatically download the necessary packages (you can trace the progress within the Terminal console)</p>
+</li>
 <li><strong>Wait</strong> until the initialization process has finished and the console has returned a <code>Source compilation was successful</code> message</li>
 <li><strong>Copy</strong> and record the <em>Web application available (default host): ...</em> address returned by the Terminal console (<code>http://localhost:9080/resorts</code> or similar)</li>
 </ul>
