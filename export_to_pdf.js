@@ -58,7 +58,7 @@ const footerHtml = `
     <span class="pageNumber"></span>
   </div>
   <div class="footer-center">
-    <div class="footer-bold-title">watsonx Code Assistant: Modernizing Applications [W7S220G]</div>
+    <div class="footer-bold-title">watsonx Code Assistant: Modernizing Applications [DL09801]</div>
     <div>Course materials may not be reproduced in whole or in part without the prior written permission of IBM.</div>
   </div>
 </div>`;
